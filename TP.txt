@@ -1,0 +1,20 @@
+int A1 = 12 + 8 * 3;
+Console.Writeline (A1);
+int A2 = (12 + 8) * 3;
+Console.Writeline (A2);
+int A3 = 50 / 5 + 4;
+Console.Writeline (A3);
+int	A4 = 100 - 10 * 2;
+Console.Writeline (A4);
+int A5 = 15 % 2;
+Console.Writeline (A5);
+int A6 = 20 % 5;
+Console.Writeline (A6);
+int A8 = 10 / 2 * 4;
+Console.Writeline (A8);
+int A9 = 25 // 4;
+Console.Writeline (A9);
+int A10 = 5 + 5 * 10 - 2;
+Console.Writeline (A10);
+
+
