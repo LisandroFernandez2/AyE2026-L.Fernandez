@@ -248,3 +248,34 @@ else
 {
     Console.WriteLine("Es falso");
 }
+
+string rr;
+rr = Console.ReadLine();
+
+if (rr == "Juan" || rr == "Ana")
+{
+    Console.WriteLine("Verdadero");
+}
+else
+{
+    Console.WriteLine("Falso");
+}
+
+int ss;
+int tt;
+int uu;
+int vv;
+int ww;
+ss = Convert.ToInt32(Console.ReadLine());
+tt = Convert.ToInt32(Console.ReadLine());
+uu = Convert.ToInt32(Console.ReadLine());
+vv = Convert.ToInt32(Console.ReadLine());
+ww = Convert.ToInt32(Console.ReadLine());
+if ((ss * tt) + uu > 15 || vv / ww == 5)
+{
+    Console.WriteLine("Verdadero");
+}
+else
+{
+    Console.WriteLine("Falso");
+}
