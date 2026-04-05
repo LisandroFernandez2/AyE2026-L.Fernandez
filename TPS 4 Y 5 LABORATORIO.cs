@@ -91,3 +91,18 @@ void ejercicio8()
 
 }
 ejercicio8();
+
+void ejercicio9 ()
+{
+    int numero = 1;
+    int suma = 0;
+    while (numero != 0)
+    {
+        Console.WriteLine("Ingrese un numero (Ingrese 0 para finalizar) ");
+        numero = Convert.ToInt32(Console.ReadLine());
+
+        suma = suma + numero;
+    }
+    Console.WriteLine("La suma total de los numeros ingresados es " + suma);
+}
+ejercicio9();
