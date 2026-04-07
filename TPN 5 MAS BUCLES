@@ -12,11 +12,15 @@ void ejercicio6() {
 }
 ejercicio6();
 
-void ejercicio7() { 
-    for (int d = 5; d >= 0; d--)
+void ejercicio7()
+{
+    int x = 5;
+    int acum = 6;
+    while (x > 0)
     {
-        Console.WriteLine(d);
-        
+        x = x - 1;
+        acum = acum - 1;
+        Console.WriteLine(acum);
     }
     Console.WriteLine("¡Listo para despegar!");
     Console.WriteLine("¡Despegue!");
