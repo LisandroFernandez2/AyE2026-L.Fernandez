@@ -34,3 +34,27 @@ void ejerciciop2()
     
 }
 ejerciciop2();
+
+void ejercicio3()
+{
+   
+    int acum = 0;
+    Console.WriteLine("Intente adivinar la contraseña, solo tiene 5 intentos");
+    string adiv = Console.ReadLine();
+    while (acum <= 3 && adiv != "bocajrs")
+    {
+        acum = acum + 1;
+        Console.WriteLine("Intente de vuelta");
+        adiv = Console.ReadLine();
+    }
+    if (adiv != "bocajrs")
+    {
+        Console.WriteLine("Acceso denegado, no ha logrado adivinar la contraseña secreta");
+    }
+    else
+    {
+        Console.WriteLine("Felicidades, ha adivinado la contraseña");
+    }
+}
+ejercicio3();
+
