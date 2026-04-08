@@ -1,281 +1,363 @@
-﻿using System.ComponentModel.Design;
-
-int x = 25;
-int y = 30;
-x = Convert.ToInt32(Console.ReadLine());
-y = Convert.ToInt32(Console.ReadLine());
-if (x < y)
+﻿﻿using System.ComponentModel.Design;
+void ejercicio1()
 {
-    Console.WriteLine(("Es falso"));
+    Console.WriteLine("EJERCICIO 1 - Por favor, ingrese el primer numero");
+    int x = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int y = Convert.ToInt32(Console.ReadLine());
+    if (x < y)
+    {
+        Console.WriteLine("La relacion es falsa");
 
-}
-else {
-    Console.WriteLine("Es verdadero");
-}
-int z = 14;
-int a = 14;
-z = Convert.ToInt32(Console.ReadLine());
-a = Convert.ToInt32(Console.ReadLine());
-if (z <= a)
-{
-    Console.WriteLine(("Es verdadero"));
+    }
+    else
+    {
+        Console.WriteLine("La relacion es verdadera");
+    }
+
 
 }
-else
+ejercicio1();
+void ejercicio2()
 {
-    Console.WriteLine("Es falso");
-}
-int b = 0;
-int c = 0;
-b = Convert.ToInt32(Console.ReadLine());
-c = Convert.ToInt32(Console.ReadLine());
-if (b == c)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 2 - Por favor, ingrese el primer numero");
+    int z = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int a = Convert.ToInt32(Console.ReadLine());
+    if (z <= a)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio2();
+void ejercicio3()
 {
-    Console.WriteLine("Es falso");
-}
-int d = 10;
-int e = 10;
-d = Convert.ToInt32(Console.ReadLine());
-e = Convert.ToInt32(Console.ReadLine());
-if (d != e)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 3 - Por favor, ingrese el primer numero");
+    int b = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int c = Convert.ToInt32(Console.ReadLine());
+    if (b == c)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio3();
+void ejercicio4()
 {
-    Console.WriteLine("Es falso");
-}
-int f = 8;
-int g = 3;
-f = Convert.ToInt32(Console.ReadLine());
-g = Convert.ToInt32(Console.ReadLine());
-if (f >= g)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 4 - Por favor, ingrese el segundo numero");
+    int d = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int e = Convert.ToInt32(Console.ReadLine());
+    if (d != e)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio4();
+void ejercicio5()
 {
-    Console.WriteLine("Es falso");
-}
-int h = 10;
-int i = 10;
-h = Convert.ToInt32(Console.ReadLine());
-i = Convert.ToInt32(Console.ReadLine());
-if (h < i)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 5- Por favor, ingrese el primer numero");
+    int f = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int g = Convert.ToInt32(Console.ReadLine());
+    if (f >= g)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio5();
+void ejercicio6()
 {
-    Console.WriteLine("Es falso");
-}
-int j = 10;
-int k = 10;
-j = Convert.ToInt32(Console.ReadLine());
-k = Convert.ToInt32(Console.ReadLine());
-if (j != k)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 6 - Por favor, ingrese el primer numero");
+    int h = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int i = Convert.ToInt32(Console.ReadLine());
+    if (h < i)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio6();
+void ejercicio7()
 {
-    Console.WriteLine("Es falso");
-}
-int l = 10;
-int m = 10;
-l = Convert.ToInt32(Console.ReadLine());
-m = Convert.ToInt32(Console.ReadLine());
-if (l == m)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 7 - Por favor, ingrese el primer numero");
+    int j = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int k = Convert.ToInt32(Console.ReadLine());
+    if (j != k)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio7();
+void ejercicio8()
 {
-    Console.WriteLine("Es falso");
-}
-int n = 10;
-int ñ = 10;
-n = Convert.ToInt32(Console.ReadLine());
-ñ = Convert.ToInt32(Console.ReadLine());
-if (n > ñ)
-{
-    Console.WriteLine(("Es verdadero"));
+    Console.WriteLine("EJERCICIO 8- Por favor, ingrese el primer numero.");
+    int l = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero.Si quiere, puede ponerlo con decimales");
+    double m = Convert.ToDouble(Console.ReadLine());
+    if (l == m)
+    {
+        Console.WriteLine("Su relacion es verdadera");
 
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
 }
-else
+ejercicio8();
+void ejercicio9()
 {
-    Console.WriteLine("Es falso");
+    Console.WriteLine("EJERCICIO 9- Por favor, ingrese el primer numero, si quiere, puede ponerlo con decimales");
+    double n = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int ñ = Convert.ToInt32(Console.ReadLine());
+    if (n > ñ)
+    {
+        Console.WriteLine("Su relacion es verdadera");
+
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
+}
+ejercicio9();
+void ejercicio10()
+{
+    Console.WriteLine("EJERCICIO 10- Por favor, ingrese el primer numero");
+    int o = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int p = Convert.ToInt32(Console.ReadLine());
+    if (o < p)
+    {
+        Console.WriteLine("Su relacion es verdadera");
+
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
+}
+ejercicio10();
+void ejercicio11() {
+    Console.WriteLine("LOGICA COMBINADA EJERCICIO 1- Por favor, ingrese el primer numero ");
+    int q = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int r = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+    int s = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+int t = Convert.ToInt32(Console.ReadLine());
+    if (q > r && s < t)
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
+}
+ejercicio11();
+void ejercicio12()
+{
+    Console.WriteLine("EJERCICIO 2 - Por favor, ingrese el primer numero");
+    int u = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int v = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+    int w = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+    int aa = Convert.ToInt32(Console.ReadLine());
+    if (u == v || w != aa)
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("su logica es falsa");
+    }
+}
+ejercicio12();
+void ejercicio13 ()
+{
+    Console.WriteLine("EJERCICIO 3 - Por favor, ingrese el primer numero");
+    int bb = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int cc = Convert.ToInt32(Console.ReadLine());
+    if (!(bb == cc))
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
+}
+ejercicio13();
+void ejercicio14()
+{
+    Console.WriteLine("EJERCICIO 4 - Por favor, ingrese el primer numero");
+    int dd = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int ee = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+    int ff = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+    int gg = Convert.ToInt32(Console.ReadLine());
+    if (dd > ee && !(ff > gg))
+    {
+        Console.WriteLine("Su relacion es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
+}
+ejercicio14();
+void ejercicio15(){
+    Console.WriteLine("EJERCICIO 5- Por favor, ingrese el primer numero");
+    int hh = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int iii = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+    int ii = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+    int jj = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el quinto numero");
+    int jjj = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el sexto numero");
+    int kkk = Convert.ToInt32(Console.ReadLine());
+    if (hh + iii > ii || jj * jjj < kkk)
+    {
+        Console.WriteLine("Su relacion es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su relacion es falsa");
+    }
+}
+ejercicio15();
+void ejercicio16()
+{
+    Console.WriteLine("EJERCICIO 6- Por favor, ingrese la temperatura");
+    int ll = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese si hay lluvia o no (si hay, poner true, en caso contrario poner false)");
+    bool mm = Convert.ToBoolean(Console.ReadLine());
+
+    if (ll > 30 && mm == true)
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
+}
+ejercicio16();
+void ejercicio17 ()
+{
+    Console.WriteLine("EJERCICIO 7- Por favor, ingrese su edad");
+    int nn = Convert.ToInt32(Console.ReadLine());
+
+    if (!(nn >= 18))
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
+}
+ejercicio17();
+void ejercicio18()
+{
+    Console.WriteLine("EJERCICIO 8- Por favor, ingrese el primer numero");
+    int ññ = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int oo = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+
+    int pp = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+    int qq = Convert.ToInt32(Console.ReadLine());
+    if (ññ / oo == 3 && pp % qq == 1)
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
+}
+ejercicio18();
+void ejercicio19 ()
+{
+
+    Console.WriteLine("EJERCICIO 9- Por favor, ingrese su nombre");
+    string rr = Console.ReadLine();
+
+    if (rr == "Juan" || rr == "Ana")
+    {
+        Console.WriteLine("Verdadero");
+    }
+    else
+    {
+        Console.WriteLine("Falso");
+    }
 }
 
-int o = 10;
-int p = 10;
-o = Convert.ToInt32(Console.ReadLine());
-p = Convert.ToInt32(Console.ReadLine());
-if (o < p)
+ejercicio19();
+void ejercicio20()
 {
-    Console.WriteLine(("Es verdadero"));
-
+    Console.WriteLine("EJERCICIO 10- Por favor, ingrese el primer numero");
+    int ss = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el segundo numero");
+    int tt = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el tercer numero");
+    int uu = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el cuarto numero");
+    int vv = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Por favor, ingrese el quinto numero");
+    int ww = Convert.ToInt32(Console.ReadLine());
+    if ((ss * tt) + uu > 15 || vv / ww == 5)
+    {
+        Console.WriteLine("Su logica es verdadera");
+    }
+    else
+    {
+        Console.WriteLine("Su logica es falsa");
+    }
 }
-else
-{
-    Console.WriteLine("Es falso");
-}
-int q;
-int r;
-int s;
-int t;
-q = Convert.ToInt32(Console.ReadLine());
-r = Convert.ToInt32(Console.ReadLine());
-s = Convert.ToInt32(Console.ReadLine());
-t = Convert.ToInt32(Console.ReadLine());
-if (q > r && s < t)
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int u;
-int v;
-int w;
-int aa;
-u = Convert.ToInt32(Console.ReadLine());
-v = Convert.ToInt32(Console.ReadLine());
-w = Convert.ToInt32(Console.ReadLine());
-aa = Convert.ToInt32(Console.ReadLine());
-if (u == v || w != aa)
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int bb;
-int cc;
-bb = Convert.ToInt32(Console.ReadLine());
-cc= Convert.ToInt32(Console.ReadLine());
-if (!(bb == cc))
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int dd;
-int ee;
-int ff;
-int gg;
-dd = Convert.ToInt32(Console.ReadLine());
-ee = Convert.ToInt32(Console.ReadLine());
-ff = Convert.ToInt32(Console.ReadLine());
-gg = Convert.ToInt32(Console.ReadLine());
-if (dd > ee && !(ff > gg))
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int hh;
-int ii;
-int jj;
-int kk;
-hh = Convert.ToInt32(Console.ReadLine());
-ii = Convert.ToInt32(Console.ReadLine());
-jj = Convert.ToInt32(Console.ReadLine());
-kk = Convert.ToInt32(Console.ReadLine());
-if (hh + 2 > ii || jj * 2 < 8)
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int ll;
-bool mm;
-
-ll = Convert.ToInt32(Console.ReadLine());
-mm = Convert.ToBoolean(Console.ReadLine());
-
-if (ll > 30 && mm == true)
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int nn;
-
-nn = Convert.ToInt32(Console.ReadLine());
-
-if (!(nn >= 18))
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-int ññ;
-int oo;
-int pp;
-int qq;
-ññ = Convert.ToInt32(Console.ReadLine());
-oo = Convert.ToInt32(Console.ReadLine());
-pp = Convert.ToInt32(Console.ReadLine());
-qq = Convert.ToInt32(Console.ReadLine());
-if (ññ / oo == 3 && pp % qq == 1)
-{
-    Console.WriteLine(("Es verdadero"));
-}
-else
-{
-    Console.WriteLine("Es falso");
-}
-
-string rr;
-rr = Console.ReadLine();
-
-if (rr == "Juan" || rr == "Ana")
-{
-    Console.WriteLine("Verdadero");
-}
-else
-{
-    Console.WriteLine("Falso");
-}
-
-int ss;
-int tt;
-int uu;
-int vv;
-int ww;
-ss = Convert.ToInt32(Console.ReadLine());
-tt = Convert.ToInt32(Console.ReadLine());
-uu = Convert.ToInt32(Console.ReadLine());
-vv = Convert.ToInt32(Console.ReadLine());
-ww = Convert.ToInt32(Console.ReadLine());
-if ((ss * tt) + uu > 15 || vv / ww == 5)
-{
-    Console.WriteLine("Verdadero");
-}
-else
-{
-    Console.WriteLine("Falso");
-}
+ejercicio20();
