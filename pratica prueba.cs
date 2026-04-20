@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.Design;
-
-void ejerciciop1 ()
+void ejerciciop1()
 {
     for (int x = 0; x <= 100; x += 3)
     {
         Console.WriteLine(x);
     }
-} 
+}
 ejerciciop1();
 
 void ejerciciop2()
@@ -31,13 +30,24 @@ void ejerciciop2()
 
 
     }
-    
+
 }
 ejerciciop2();
 
 void ejercicio3()
 {
-   
+    Console.WriteLine("Escribí una palabra:");
+    string palabra = Console.ReadLine();
+
+    int cantidad = palabra.Length;
+
+    Console.WriteLine("La palabra tiene " + cantidad + " letras.");
+}
+ejercicio3();
+
+void ejercicio4()
+{
+
     int acum = 0;
     Console.WriteLine("Intente adivinar la contraseña, solo tiene 5 intentos");
     string adiv = Console.ReadLine();
@@ -56,5 +66,5 @@ void ejercicio3()
         Console.WriteLine("Felicidades, ha adivinado la contraseña");
     }
 }
-ejercicio3();
+ejercicio4();
 
