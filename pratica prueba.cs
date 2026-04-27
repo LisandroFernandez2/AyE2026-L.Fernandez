@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.Design;
-void ejerciciop1()
+void ejercicioA()
 {
     for (int x = 0; x <= 100; x += 3)
     {
         Console.WriteLine(x);
     }
 }
-ejerciciop1();
+ejercicioA();
 
-void ejerciciop2()
+void ejercicioB()
 {
     Console.WriteLine("Ingrese su edad");
     int edad = Convert.ToInt32(Console.ReadLine());
@@ -32,9 +32,9 @@ void ejerciciop2()
     }
 
 }
-ejerciciop2();
+ejercicioB();
 
-void ejercicio3()
+void ejercicioC()
 {
     Console.WriteLine("Escribí una palabra:");
     string palabra = Console.ReadLine();
@@ -43,9 +43,9 @@ void ejercicio3()
 
     Console.WriteLine("La palabra tiene " + cantidad + " letras.");
 }
-ejercicio3();
+ejercicioC();
 
-void ejercicio4()
+void ejercicioD()
 {
 
     int acum = 0;
@@ -66,5 +66,5 @@ void ejercicio4()
         Console.WriteLine("Felicidades, ha adivinado la contraseña");
     }
 }
-ejercicio4();
+ejercicioD();
 
