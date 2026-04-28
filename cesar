@@ -1,0 +1,63 @@
+string especial = "abcdefghijklmnopqrstuvwxyz";
+string funcion1 ()
+{
+    bool tabien = false;
+    string texto = "";
+    while (tabien == false)
+    {
+        Console.Write("Pone un mensaje");
+        texto = Console.ReadLine();
+        texto = texto.ToLower();
+        
+        bool contieneError = false;
+
+        for (int i = 0; i < texto.Length; i++)
+        {
+            char caracterusuario = texto[i];
+            bool encontrado = false;
+            for (int j = 0; j < especial.Length; j++)
+            {
+                if (caracterusuario == especial[j])
+                {
+                    encontrado = true;
+                    break;
+                }
+
+            }
+            if (!encontrado)
+            {
+                contieneError = true;
+                break;
+            }
+        }
+        if (contieneError)
+        {
+            Console.WriteLine("El mensaje contiene caracteres no permitidos");
+        }
+        else
+        {
+            tabien = true;
+        }
+
+    }
+    return texto;
+}  
+Console.WriteLine(funcion1());
+
+string funcion2(string texto)
+{
+   
+    bool estabien = false;
+    while (estabien == false)
+    {
+        Console.WriteLine("¿Desea cifrar o descifrar?");
+        string usuariodesicion = Console.ReadLine();
+        usuariodesicion = usuariodesicion.ToLower();
+        if ( == "cifrar")
+
+    }
+}
+
+
+
+Console.WriteLine(funcion2(funcion1()));
