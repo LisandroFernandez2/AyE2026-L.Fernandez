@@ -127,3 +127,15 @@ void ejercicioH()
 
 }
 ejercicioH();
+void ejercicioI() {
+Console.WriteLine("Ingrese un numero");
+int numeroing = (Convert.ToInt32(Console.ReadLine()));
+if (numeroing % 2 == 0) {
+Console.WriteLine("su numero es par");
+}
+else 
+{
+Console.WriteLine("su numero no es par");
+}
+}
+ejercicioI():
