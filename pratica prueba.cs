@@ -67,4 +67,63 @@ void ejercicioD()
     }
 }
 ejercicioD();
+void ejercicioE()
+{
 
+    
+  
+        Console.WriteLine("Ingrese un número:");
+        int mayor = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 2; i <= 10; i++)
+        {
+            Console.WriteLine("Ingrese un número:");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            if (numero > mayor)
+            {
+                mayor = numero;
+            }
+        }
+
+        Console.WriteLine("El número más alto es " + mayor);
+    
+
+    
+}
+ejercicioE();
+
+void ejercicioF()
+{
+    Console.WriteLine("Por favor, escriba su nombre");
+
+    string nombre = Console.ReadLine();
+    Console.WriteLine("Por favor, ingrese que cantidad de letras de su nombre desea mostrar en mayuscula");
+    int numeroparte = (Convert.ToInt32(Console.ReadLine()));
+    
+       string parte = nombre.Substring(0, numeroparte);
+        string partemayu = parte.ToUpper();
+        Console.WriteLine(partemayu);
+    
+   
+}
+ejercicioF();
+void ejercicioG()
+{
+    for (int i = 1; i <=10; i++)
+    {
+        Console.WriteLine(i * 7);
+    }
+}  
+ejercicioG();
+void ejercicioH()
+{
+    for (int i = 10; i > 0; i--)
+    {
+        Console.WriteLine(i);
+    }
+    Console.WriteLine("oa");
+
+
+}
+ejercicioH();
