@@ -138,4 +138,4 @@ else
 Console.WriteLine("su numero no es par");
 }
 }
-ejercicioI():
+ejercicioI();
