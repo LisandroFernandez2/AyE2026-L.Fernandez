@@ -53,11 +53,77 @@ string funcion2(string texto)
         Console.WriteLine("¿Desea cifrar o descifrar?");
         string usuariodesicion = Console.ReadLine();
         usuariodesicion = usuariodesicion.ToLower();
-        if ( == "cifrar")
+         int clave = 0;
+    bool claveLista = false;
+    while (claveLista == false)
+    {
+        Console.WriteLine("Ingrese la clave (solo números positivos):");
+        string entrada = Console.ReadLine();
+        
+        int claveTemporal = 0;
+        bool errorEnNumero = false;
 
+        for (int i = 0; i < entrada.Length; i++)
+        {
+            int valorDigito = -1;
+            if (entrada[i] == '0') valorDigito = 0;
+            if (entrada[i] == '1') valorDigito = 1;
+            if (entrada[i] == '2') valorDigito = 2;
+            if (entrada[i] == '3') valorDigito = 3;
+            if (entrada[i] == '4') valorDigito = 4;
+            if (entrada[i] == '5') valorDigito = 5;
+            if (entrada[i] == '6') valorDigito = 6;
+            if (entrada[i] == '7') valorDigito = 7;
+            if (entrada[i] == '8') valorDigito = 8;
+            if (entrada[i] == '9') valorDigito = 9;
+
+            if (valorDigito == -1)
+            {
+                errorEnNumero = true;
+                break;
+            }
+            
+            claveTemporal = (claveTemporal * 10) + valorDigito;
+        }
+
+        if (errorEnNumero == false && entrada.Length > 0)
+        {
+            clave = claveTemporal;
+            claveLista = true;
+        }
+        else
+        {
+            Console.WriteLine("Por favor, ingrese un número válido.");
+        }
     }
+
+    if (usuariodesicion == "descifrar")
+    {
+        clave = -clave;
+    }
+
+    for (int i = 0; i < texto.Length; i++)
+    {
+        int posicionOriginal = 0;
+        for (int j = 0; j < especial.Length; j++)
+        {
+            if (texto[i] == especial[j])
+            {
+                posicionOriginal = j;
+                break;
+            }
+        }
+
+        int nuevaPosicion = (posicionOriginal + clave) % 26;
+        if (nuevaPosicion < 0)
+        {
+            nuevaPosicion = nuevaPosicion + 26;
+        }
+
+        resultado = resultado + especial[nuevaPosicion];
+    }
+
+    return resultado;
 }
-
-
 
 Console.WriteLine(funcion2(funcion1()));
