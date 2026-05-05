@@ -28,7 +28,7 @@ using System.Reflection;
                 contador++;
             }
         }
-        Console.WriteLine("Total de vocales: " + contador + "\n");
+        Console.WriteLine("Total de vocales: " + contador);
     }
 
     static void Ejercicio2()
@@ -42,7 +42,7 @@ using System.Reflection;
         {
             invertida += texto[i];
         }
-        Console.WriteLine("Invertida: " + invertida + "\n");
+        Console.WriteLine("Invertida: " + invertida);
     }
 
     static void Ejercicio3()
@@ -59,7 +59,7 @@ using System.Reflection;
                 suma += (int)(n[i] - '0');
             }
         }
-        Console.WriteLine("La suma de los dígitos es: " + suma + "\n");
+        Console.WriteLine("La suma de los dígitos es: " + suma);
     }
 
     static void Ejercicio4()
@@ -73,7 +73,7 @@ using System.Reflection;
         string reemplazo = Console.ReadLine();
         
         string resultado = parrafo.Replace(prohibida, reemplazo);
-        Console.WriteLine("Resultado: " + resultado + "\n");
+        Console.WriteLine("Resultado: " + resultado);
     }
 
     static void Ejercicio5()
@@ -93,7 +93,7 @@ using System.Reflection;
 
             Console.WriteLine("Iniciales: " + inicialNombre + "." + inicialApellido + ".");
             Console.WriteLine("Primer nombre: " + nombre);
-            Console.WriteLine("Apellido: " + apellido + "\n");
+            Console.WriteLine("Apellido: " + apellido);
         }
     }
 
@@ -129,6 +129,6 @@ using System.Reflection;
             fin--;
         }
 
-        if (esPalindromo) Console.WriteLine("Es un palíndromo.\n");
-        else Console.WriteLine("No es un palíndromo.\n");
+        if (esPalindromo) Console.WriteLine("Es un palíndromo");
+        else Console.WriteLine("No es un palíndromo");
     }
