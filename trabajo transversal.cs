@@ -1,360 +1,134 @@
 ﻿using System.ComponentModel.Design;
 using System.Reflection;
-Console.WriteLine("Por favor, ingrese el numero del ejercicio al cual desea ingresar");
-string ingresado = Console.ReadLine();
-string nuevoingresado = ingresado.ToUpper();
-switch (nuevoingresado)
-{
-    case "A":
-        ejercicioA();
-        break;
-    case "B":
-        ejercicioB();
-        break;
-    case "C":
-        ejercicioC();
-        break;
-    case "D":
-        ejercicioD();
-        break;
-    case "E":
-        ejercicioE();
-        break;
-    case "F":
-        ejercicioF();
-        break;
-    case "G":
-        ejercicioG();
-        break;
-    case "H":
-        ejercicioH();
-        break;
-    case "I":
-        ejercicioI();
-        break;
-    case "J":
-        ejercicioJ();
-        break;
-    case "K":
-        ejercicioK();
-        break;
-    case "L":
-        ejercicioL();
-        break;
-    case "M":
-        ejercicioM();
-        break;
-    case "N":
-        ejercicioN();
-        break;
-    case "O":
-        ejercicioO();
-        break;
-    case "P":
-        ejercicioP();
-        break;
-    case "Q":
-        ejercicioQ();
-        break;
-    case "R":
-        ejercicioR();
-        break;
-    default:
-        Console.WriteLine("Parametros erroneos, ingrese el numero del ejercicio al cual desea ingresar");
-        ingresado = Console.ReadLine();
-        nuevoingresado = ingresado.ToUpper();
-        break;
-}
-
-
-
-
-
-
-void ejercicioA()
-{
-    for (int x = 0; x <= 100; x += 3)
+  static void Main()
     {
-        Console.WriteLine(x);
-    }
-}
-
-
-void ejercicioB()
-{
-    Console.WriteLine("Ingrese su edad");
-    int edad = Convert.ToInt32(Console.ReadLine());
-    if (edad > 18)
-    {
-
-        Console.WriteLine("Usted es mayor de edad");
-
-    }
-    else if (edad < 18)
-    {
-
-        Console.WriteLine("Usted es menor de edad");
-    }
-    else
-    {
-
-        Console.WriteLine("Usted tiene exactamente 18 años");
-
-
+        Ejercicio1();
+        Ejercicio2();
+        Ejercicio3();
+        Ejercicio4();
+        Ejercicio5();
+        Ejercicio6();
     }
 
-}
-
-
-void ejercicioC()
-{
-    Console.WriteLine("Escribí una palabra:");
-    string palabra = Console.ReadLine();
-
-    int cantidad = palabra.Length;
-
-    Console.WriteLine("La palabra tiene " + cantidad + " letras.");
-}
-
-
-void ejercicioD()
-{
-
-    int acum = 0;
-    Console.WriteLine("Intente adivinar la contraseña, solo tiene 5 intentos");
-    string adiv = Console.ReadLine();
-    while (acum <= 3 && adiv != "bocajrs")
+    static void Ejercicio1()
     {
-        acum = acum + 1;
-        Console.WriteLine("Intente de vuelta");
-        adiv = Console.ReadLine();
-    }
-    if (adiv != "bocajrs")
-    {
-        Console.WriteLine("Acceso denegado, no ha logrado adivinar la contraseña secreta");
-    }
-    else
-    {
-        Console.WriteLine("Felicidades, ha adivinado la contraseña");
-    }
-}
+        Console.WriteLine("--- Ejercicio 1 ---");
+        Console.Write("Ingresa una frase: ");
+        string frase = Console.ReadLine();
+        int contador = 0;
 
-void ejercicioE()
-{
-
-
-
-    Console.WriteLine("Ingrese un número:");
-    int mayor = Convert.ToInt32(Console.ReadLine());
-
-    for (int i = 2; i <= 10; i++)
-    {
-        Console.WriteLine("Ingrese un número:");
-        int numero = Convert.ToInt32(Console.ReadLine());
-
-        if (numero > mayor)
+        for (int i = 0; i < frase.Length; i++)
         {
-            mayor = numero;
-        }
-    }
-
-    Console.WriteLine("El número más alto es " + mayor);
-
-
-
-}
-
-
-void ejercicioF()
-{
-    Console.WriteLine("Por favor, escriba su nombre");
-
-    string nombre = Console.ReadLine();
-    Console.WriteLine("Por favor, ingrese que cantidad de letras de su nombre desea mostrar en mayuscula");
-    int numeroparte = (Convert.ToInt32(Console.ReadLine()));
-
-    string parte = nombre.Substring(0, numeroparte);
-    string partemayu = parte.ToUpper();
-    Console.WriteLine(partemayu);
-
-
-}
-
-void ejercicioG()
-{
-    for (int i = 1; i <= 10; i++)
-    {
-        Console.WriteLine(i * 7);
-    }
-}
-
-void ejercicioH()
-{
-    for (int i = 10; i > 0; i--)
-    {
-        Console.WriteLine(i);
-    }
-    Console.WriteLine("oa");
-
-
-}
-
-void ejercicioI()
-{
-    Console.WriteLine("Ingrese un numero");
-    int numeroing = (Convert.ToInt32(Console.ReadLine()));
-    if (numeroing % 2 == 0)
-    {
-        Console.WriteLine("su numero es par");
-    }
-    else
-    {
-        Console.WriteLine("su numero no es par");
-    }
-}
-
-void ejercicioJ()
-{
-    string vocales = "aeiou";
-    Console.WriteLine("Ingrese una frase");
-    string frase = Console.ReadLine();
-    string frasenueva = frase.ToLower();
-    int acum = 0;
-    foreach (char c in vocales)
-    {
-        foreach (char d in frasenueva)
-        {
-            if (c == d)
+            char c = frase[i];
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' ||
+                c == 'á' || c == 'é' || c == 'í' || c == 'ó' || c == 'ú' ||
+                c == 'Á' || c == 'É' || c == 'Í' || c == 'Ó' || c == 'Ú')
             {
-                acum = acum + 1;
-                
+                contador++;
             }
         }
+        Console.WriteLine("Total de vocales: " + contador + "\n");
     }
-    Console.WriteLine("La cantidad de vocales en su frase ingresada es de " + acum + "");
-}
 
-void ejercicioK()
-{
-    Console.WriteLine("Por favor, ingrese un numero");
-    int numeroing = (Convert.ToInt32(Console.ReadLine()));
-    for (int i = 0; i <= 12; i++)
+    static void Ejercicio2()
     {
-        Console.WriteLine("Las tables de su numero ingresado es");
-        Console.WriteLine(i * numeroing);
+        Console.WriteLine("--- Ejercicio 2 ---");
+        Console.Write("Ingresa una frase: ");
+        string texto = Console.ReadLine();
+        string invertida = "";
+
+        for (int i = texto.Length - 1; i >= 0; i--)
+        {
+            invertida += texto[i];
+        }
+        Console.WriteLine("Invertida: " + invertida + "\n");
     }
-}
 
-void ejercicioL()
-{
-    int acum = 0;
-    while (acum < 100)
+    static void Ejercicio3()
     {
-        Console.WriteLine("Ingrese un numero");
-       int numeroing = (Convert.ToInt32(Console.ReadLine()));
-        acum = acum + numeroing;
+        Console.WriteLine("--- Ejercicio 3 ---");
+        Console.Write("Ingresa un número entero: ");
+        string n = Console.ReadLine();
+        int suma = 0;
+
+        for (int i = 0; i < n.Length; i++)
+        {
+            if (n[i] >= '0' && n[i] <= '9')
+            {
+                suma += (int)(n[i] - '0');
+            }
+        }
+        Console.WriteLine("La suma de los dígitos es: " + suma + "\n");
+    }
+
+    static void Ejercicio4()
+    {
+        Console.WriteLine("--- Ejercicio 4 ---");
+        string parrafo = "El gato juega en el jardin porque el gato es feliz.";
+        Console.WriteLine("Texto original: " + parrafo);
+        Console.Write("Palabra prohibida: ");
+        string prohibida = Console.ReadLine();
+        Console.Write("Palabra de reemplazo: ");
+        string reemplazo = Console.ReadLine();
         
+        string resultado = parrafo.Replace(prohibida, reemplazo);
+        Console.WriteLine("Resultado: " + resultado + "\n");
     }
 
-
-
-
-}
-
-void ejercicioM()
-{
-    Console.WriteLine("Ingrese una palabra");
-    string palabraing = Console.ReadLine();
-    foreach (char c in palabraing)
+    static void Ejercicio5()
     {
-        Console.WriteLine(c);
-    }
-}
+        Console.WriteLine("--- Ejercicio 5 ---");
+        Console.Write("Ingresa tu nombre completo: ");
+        string entrada = Console.ReadLine();
+        string[] partes = entrada.Split(' ');
 
-void ejercicioN()
-{
-    Console.WriteLine("Ingrese su edad");
-    int edad = (Convert.ToInt32(Console.ReadLine()));
-    if (edad < 16)
-    {
-        Console.WriteLine("Ustedes no puede ni votar ni manejar");
-    }
-    else if (edad > 16)
-    {
-        Console.WriteLine("Usted puede manejar y votar");
-    }
-    else if (edad == 16)
-    {
-        Console.WriteLine("Usted solo puede votar");
-    }
-}
-
-void ejercicioO()
-{
-    for (int i = 50; i >= 0; i -= 5)
-    {
-        Console.WriteLine(i);
-    }
-}
-
-void ejercicioP()
-{
-    
-    
-        Console.WriteLine("Ingrese una contraseña:");
-        string contraing1 = Console.ReadLine();
-
-        bool coinciden = false;
-
-        while (!coinciden)
+        if (partes.Length >= 2)
         {
-            Console.WriteLine("Ingrese la contraseña nuevamente para verificar:");
-            string contraing2 = Console.ReadLine();
+            string nombre = partes[0];
+            string apellido = partes[partes.Length - 1];
+            
+            char inicialNombre = nombre[0];
+            char inicialApellido = apellido[0];
 
-            if (contraing1 == contraing2)
-            {
-                Console.WriteLine("Verificación realizada con éxito, su contraseña ha sido creada.");
-                coinciden = true;
-            }
-            else
-            {
-                Console.WriteLine("Las contraseñas no coinciden. Intente de nuevo.");
-            }
+            Console.WriteLine("Iniciales: " + inicialNombre + "." + inicialApellido + ".");
+            Console.WriteLine("Primer nombre: " + nombre);
+            Console.WriteLine("Apellido: " + apellido + "\n");
         }
     }
 
-void ejercicioQ()
-{
-    bool condicion = false;
-    while (condicion == false)
+    static void Ejercicio6()
     {
-        Console.WriteLine("Ingrese un nombre");
-        string nombre1 = Console.ReadLine();
-        if (nombre1.Length > 10)
+        Console.WriteLine("--- Ejercicio 6 ---");
+        Console.Write("Ingresa una palabra: ");
+        string entrada = Console.ReadLine();
+        
+        string palabra = "";
+        for (int i = 0; i < entrada.Length; i++)
         {
-            condicion = true;
-        }
-    }
-}
-
-void ejercicioR()
-{
-    string condicion = "a";
-    Console.WriteLine("Ingrese una palabra");
-    string palabraing = Console.ReadLine();
-    int acum = 0;
-    foreach (char c in condicion)
-    {
-        foreach (char d in palabraing)
-        {
-            if (c == d)
+            if (entrada[i] != ' ')
             {
-                acum = acum + 1;
-                
+                char c = entrada[i];
+                if (c >= 'A' && c <= 'Z') c = (char)(c + 32); 
+                palabra += c;
             }
         }
+
+        bool esPalindromo = true;
+        int inicio = 0;
+        int fin = palabra.Length - 1;
+
+        while (inicio < fin)
+        {
+            if (palabra[inicio] != palabra[fin])
+            {
+                esPalindromo = false;
+                break;
+            }
+            inicio++;
+            fin--;
+        }
+
+        if (esPalindromo) Console.WriteLine("Es un palíndromo.\n");
+        else Console.WriteLine("No es un palíndromo.\n");
     }
-    Console.WriteLine("La cantidad de letras A en su palabra ingresada es de " +acum);
-
-
-}
