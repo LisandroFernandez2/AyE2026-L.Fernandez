@@ -64,8 +64,56 @@ bool recursiva4(int n)
     }
 }
 recursiva4(7);
-bool recursiva5 (int n)
+int aux = 0;
+int recursiva5(int n)
 {
-
+    if (n == 0)
+    {
+        return aux;
+    }
+    else
+    {
+        aux = aux + n;
+        recursiva5(n-1);
+        return aux;
+    }
 }
-recursiva5(1);
+
+aux = recursiva5(Convert.ToInt32(Console.ReadLine()));
+Console.WriteLine(aux);
+string recursiva6(string contra2)
+{
+    string contra = "caine";
+    
+    if (contra == contra2)
+    {
+        Console.WriteLine("La contraseña es correcta");
+        return contra2;
+    }
+    else
+    {
+        Console.WriteLine("Intentelo de nuevo");
+        recursiva6(Console.ReadLine());
+        return contra2;
+
+    }
+}
+recursiva6(Console.ReadLine());
+
+int recursiva7 (int z)
+{
+    if(z == 0)
+    {
+        Console.WriteLine("Listos para despegar");
+        Console.WriteLine("Despegue");
+        return z;
+    }
+    else
+    {
+        z = z - 1;
+        Console.WriteLine(z);
+        recursiva7(z);
+        return z;
+    }
+}
+recursiva7(6);
