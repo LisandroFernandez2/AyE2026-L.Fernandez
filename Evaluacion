@@ -11,7 +11,7 @@ while (valido)
     }
     catch (System.FormatException)
     {
-
+     Console.WriteLine("Ingrese un numero, no una letra/palabra");
     }
 }
 int funcionsalario(int horas)
