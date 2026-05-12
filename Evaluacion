@@ -1,0 +1,126 @@
+bool valido = true;
+
+while (valido)
+{
+    Console.WriteLine("Ingrese la cantidad de horas trabajadas");
+    try
+    {
+        int horas = Convert.ToInt32(Console.ReadLine());
+        funcionsalario(horas);
+        valido = false;
+    }
+    catch (System.FormatException)
+    {
+
+    }
+}
+int funcionsalario(int horas)
+{
+    int salariototal = 0;
+    int horasextra = 0;
+    if (horas <= 40)
+    {
+        salariototal = 16 * horas;
+        Console.WriteLine("El pago es de " + salariototal + " pesos");
+        return salariototal;
+    }
+    else if (horas > 40)
+    {
+        horasextra = horas - 40;
+        salariototal = 16 * (horas - horasextra) + 12 * horasextra;
+        Console.WriteLine("El pago es de " + salariototal + " pesos");
+        return salariototal;
+    }
+    return salariototal;
+}
+
+
+int sumanumeros()
+{
+    bool sigue = true;
+    int acum = 0;
+    while (sigue)
+    {
+        Console.WriteLine("Ingrese un numero, si quiere finalizar la funcion, ingrese 0");
+        try
+        {
+            int numero = Convert.ToInt32(Console.ReadLine());
+            if (numero != 0)
+            {
+                acum = acum + numero;
+
+            }
+            else if (numero == 0)
+            {
+                Console.WriteLine("La suma de los numeros ingresados es de " + acum);
+                sigue = false;
+                return acum;
+            }
+        }
+        catch (System.FormatException)
+        {
+
+        }
+    }
+    return acum;
+}
+sumanumeros();
+
+string ejercicio3()
+{
+    bool valido = true;
+    int cantidvocales = 0;
+    string vocales = "aeiou";
+
+    while (valido)
+    {
+        Console.WriteLine("Ingrese una palabra");
+
+        string palabraing = Console.ReadLine();
+        string palabraing2 = palabraing.ToLower();
+        foreach (char c in vocales)
+        {
+            foreach (char n in palabraing2)// profe no puse trycatch pq no me tira ningun error (;
+            {
+                if (n == c)
+                {
+                    cantidvocales++;
+
+                }
+            }
+        }
+        valido = false;
+
+
+
+    }
+    Console.WriteLine("Su cantidad de vocales es de " + cantidvocales);
+    return vocales;
+}
+ejercicio3();
+
+string palindromo()
+{
+    Console.WriteLine("Ingrese una palabra");
+
+    string palabraing = Console.ReadLine();
+
+    string palabraing2 = "";
+    for (int i = (palabraing.Length - 1); i > -1; i--)
+    {
+        palabraing2 += palabraing[i];
+
+    }
+    Console.WriteLine(palabraing2);
+    if (palabraing2 == palabraing)
+    {
+        Console.WriteLine("Su palabra es un palindromo"); // profe no puse trycatch pq no me tira ningun error (;
+    }
+    else
+    {
+        Console.WriteLine("Su palabra no es un palindromo");
+    }
+    return "hola";
+
+}
+palindromo();
