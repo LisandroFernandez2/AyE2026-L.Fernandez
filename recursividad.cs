@@ -117,3 +117,20 @@ int recursiva7 (int z)
     }
 }
 recursiva7(6);
+int recursiva8 (int secreto)
+{
+    Console.WriteLine("Adivine el numero");
+    int adivin = Convert.ToInt32(Console.ReadLine());
+    if (adivin == secreto)
+    {
+        Console.WriteLine("¡Felicidades! Adivinaste el número.");
+        return secreto;
+    }
+    else
+    {
+        Console.WriteLine("intentelo de vuelta");
+        recursiva8(secreto);
+        return secreto;
+    }
+}
+recursiva8(7);
