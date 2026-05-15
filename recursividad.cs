@@ -134,3 +134,23 @@ int recursiva8 (int secreto)
     }
 }
 recursiva8(7);
+int acum = 0;
+int recursiva9()
+{
+    Console.WriteLine("Ingrese un numero");
+    int num = Convert.ToInt32(Console.ReadLine());
+    if (num == 0)
+    {
+        Console.WriteLine("La suma de los numeros ingresados es de: " + acum);
+        return acum;
+    }
+    else
+    {
+        acum = acum + num;
+        Console.WriteLine("Ingrese otro numero");
+        recursiva9();
+    }
+    return acum;
+
+}
+recursiva9();
