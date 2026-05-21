@@ -127,3 +127,128 @@ int ejercicio3 (int sueldob, int antiguecod, int presentcorr)
     return sueldob;
 }
 ejercicio3(sueldob, antiguecod, presentcorr);
+
+
+Console.WriteLine("Ingrese el dia con dos digitos");
+int dia = int.Parse(Console.ReadLine());
+Console.WriteLine("Ingrese el mes con dos digitos");
+int mes = int.Parse(Console.ReadLine());
+Console.WriteLine("Ingrese el año con dos digitos");
+int año = int.Parse(Console.ReadLine());
+
+
+int ejercicio4 (int dia, int mes, int año)
+{
+    string mes2 = "";
+    switch (mes)
+    {
+        case 01:
+            mes2 = "enero";
+            break;
+        case 02:
+            mes2 = "febrero";
+            break;
+        case 03:
+            mes2 = "marzo";
+            break;
+        case 04:
+            mes2 = "abril";
+            break;
+        case 05:
+            mes2 = "mayo";
+            break;
+        case 06:
+            mes2 = "junio";
+            break;
+        case 07:
+            mes2 = "julio";
+            break;
+        case 08:
+            mes2 = "agosto";
+            break;
+        case 09:
+            mes2 = "septiembre";
+            break;
+        case 10:
+            mes2 = "octubre";
+            break;
+        case 11:
+            mes2 = "noviembre";
+            break;
+        case 12:
+            mes2 = "diciembre";
+            break;
+        default:
+            Console.WriteLine("Ingrese el mes de vuelta");
+            mes = int.Parse(Console.ReadLine());
+            ejercicio4(dia, mes, año);
+            break;
+    }
+    Console.WriteLine(dia + " de " + mes2 + " de 20" + año);
+    return dia; 
+
+    
+}
+ejercicio4(dia,mes,año);
+
+Console.WriteLine("Elija una figura para sacar ya sea el perimetro y/o la superficie" + " 1. Cuadrado  2. Rectángulo   3. Triángulo   4. Círculo   5. Rombo");
+int figura = int.Parse(Console.ReadLine());
+Console.WriteLine("Elija si desea calcular el perimetro o la superficie (0 = perimetro, 1 = superficie)");
+int calculo = int.Parse(Console.ReadLine());
+int ejercicio5 (int figura, int calculo)
+{
+    int resultado = 0;
+    int lado = 0;
+    int baser = 0;
+    int altura = 0;
+    switch (figura) {
+        case 1:
+            switch (calculo) {
+                case 0:
+
+                    Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN CUADRADO- Ingrese la medida de uno de los lados");
+                    lado = int.Parse(Console.ReadLine());
+                    resultado = 4 * lado;
+                    break;
+                case 1:
+                    Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE DE UN CUADRADO - Ingrese la medida de uno de los lados");
+                    lado = int.Parse(Console.ReadLine());
+                    resultado = lado * lado;
+                    break;
+            }
+            break;
+
+        case 2:
+            switch (calculo)
+            {
+                case 0:
+                    {
+                        Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN RECTANGULO- Ingrese la base");
+                        baser = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Ingrese la altura");
+                        altura = int.Parse(Console.ReadLine());
+                        resultado = 2 * (baser + altura);
+                        break;
+                    }
+                case 1:
+                    {
+                        Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE DE UN RECTANGULO- Ingrese la base");
+                        baser = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Ingrese la altura");
+                        altura = int.Parse(Console.ReadLine());
+                        resultado = baser * altura;
+                        break;
+                    }
+            }
+            break; 
+        case 3:
+            switch (calculo)
+            {
+                case 0:
+                }
+                Console.WriteLine("El resultado seria: " + resultado);
+                return resultado;
+            }
+    }
+}
+ejercicio5(figura, calculo);
