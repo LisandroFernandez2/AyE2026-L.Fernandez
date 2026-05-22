@@ -195,25 +195,35 @@ Console.WriteLine("Elija una figura para sacar ya sea el perimetro y/o la superf
 int figura = int.Parse(Console.ReadLine());
 Console.WriteLine("Elija si desea calcular el perimetro o la superficie (0 = perimetro, 1 = superficie)");
 int calculo = int.Parse(Console.ReadLine());
-int ejercicio5 (int figura, int calculo)
+int ejercicio5(int figura, int calculo)
 {
-    int resultado = 0;
+    double resultado = 0;
     int lado = 0;
-    int baser = 0;
+    int diagomay = 0;
+    int diagomen = 0;
+    int lado2 = 0;
+    int lado3 = 0;
+    int basee = 0;
     int altura = 0;
-    switch (figura) {
+    int diametro = 0;
+    int radio = 0;
+    switch (figura)
+    {
         case 1:
-            switch (calculo) {
+            switch (calculo)
+            {
                 case 0:
 
                     Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN CUADRADO- Ingrese la medida de uno de los lados");
                     lado = int.Parse(Console.ReadLine());
                     resultado = 4 * lado;
+                    Console.WriteLine("El resultado seria: " + resultado);
                     break;
                 case 1:
                     Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE DE UN CUADRADO - Ingrese la medida de uno de los lados");
                     lado = int.Parse(Console.ReadLine());
                     resultado = lado * lado;
+                    Console.WriteLine("El resultado seria: " + resultado);
                     break;
             }
             break;
@@ -222,33 +232,133 @@ int ejercicio5 (int figura, int calculo)
             switch (calculo)
             {
                 case 0:
-                    {
+                    
                         Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN RECTANGULO- Ingrese la base");
-                        baser = int.Parse(Console.ReadLine());
+                        basee = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese la altura");
                         altura = int.Parse(Console.ReadLine());
-                        resultado = 2 * (baser + altura);
-                        break;
-                    }
+                        resultado = 2 * (basee + altura);
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+                    
                 case 1:
-                    {
+                    
                         Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE DE UN RECTANGULO- Ingrese la base");
-                        baser = int.Parse(Console.ReadLine());
+                        basee = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese la altura");
                         altura = int.Parse(Console.ReadLine());
-                        resultado = baser * altura;
-                        break;
-                    }
+                        resultado = basee * altura;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+                    
             }
-            break; 
+            break;
         case 3:
             switch (calculo)
             {
                 case 0:
-                }
-                Console.WriteLine("El resultado seria: " + resultado);
-                return resultado;
+                    Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN TRIANGULO- Ingrese el primer lado");
+                    lado = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese el segundo lado");
+                    lado2 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese el tercer lado");
+                    lado3 = int.Parse(Console.ReadLine());
+                    resultado = lado + lado2 + lado3;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+                case 1:
+                    Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE DE UN TRIANGULO- Ingrese la base");
+                    basee = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la altura");
+                    altura = int.Parse(Console.ReadLine());
+                    resultado = (basee * altura) / 2;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
             }
+            break;
+        case 4:
+            switch (calculo)
+            {
+                case 0:
+                    Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO/LONGITUD DE CIRCUNFERENCIA DE UN CIRCULO- Ingrese el diametro");
+                    diametro = int.Parse(Console.ReadLine());
+                    resultado = diametro * 3.1416;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+                case 1:
+                    Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE/AREA DE UN CIRCULO- Ingrese el radio del circulo");
+                    radio = int.Parse(Console.ReadLine());
+                    resultado = 3.1416 * (radio * radio);
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+            }
+            break;
+        case 5:
+            switch (calculo)
+            {
+                case 0:
+                    Console.WriteLine("USTED VA A CALCULAR EL PERIMETRO DE UN ROMBO- Ingrese un lado");
+                    lado = int.Parse(Console.ReadLine());
+                    resultado = lado * 4;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+                case 1:
+                    Console.WriteLine("USTED VA A CALCULAR LA SUPERFICIE/AREA DE UN ROMBO- Ingrese el diagonal mayor");
+                    diagomay = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese el diagonal menor");
+                    diagomen = int.Parse(Console.ReadLine());
+                    resultado = (diagomay * diagomen) / 2;
+                    Console.WriteLine("El resultado seria: " + resultado);
+                    break;
+            }
+
+            return lado;
     }
+    return lado;
 }
 ejercicio5(figura, calculo);
+
+Console.WriteLine("Ingrese cuanto va a pagar");
+int compra = int.Parse(Console.ReadLine());
+int ejercicio6 (int compra)
+{
+    double cantidadfin = 0;
+    bool blanco = false;
+    bool verde = false;
+    bool amarilla = false;
+    bool azul = false;
+    bool roja = false;
+    Console.WriteLine("¿Saco una bolita blanca?");
+    blanco = Convert.ToBoolean(Console.ReadLine());
+    Console.WriteLine("¿Saco una bolita verde?");
+    verde = Convert.ToBoolean(Console.ReadLine());
+    Console.WriteLine("¿Saco una bolita amarilla?");
+    amarilla = Convert.ToBoolean(Console.ReadLine());
+    Console.WriteLine("¿Saco una bolita azul?");
+    azul = Convert.ToBoolean(Console.ReadLine());
+    Console.WriteLine("¿Saco una bolita roja?");
+    roja = Convert.ToBoolean(Console.ReadLine());
+    if (blanco == true)
+    {
+        cantidadfin = compra;
+    }
+    if (verde == true)
+    {
+        cantidadfin = compra - (compra * 0.1);
+    }
+    if (amarilla == true)
+    {
+        cantidadfin = compra - (compra * 0.25);
+    }
+    if (azul == true)
+    {
+        cantidadfin = compra - (compra * 0.5);
+    }
+    if (roja == true)
+    {
+        cantidadfin = 0;
+    }
+    Console.WriteLine("La cantidad final es de " + cantidadfin);
+    return compra;
+}
+ejercicio6(compra);
