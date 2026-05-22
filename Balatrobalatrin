@@ -1,0 +1,21 @@
+Console.WriteLine("Desea descartar cartas, pedir cartas o dejar de jugar");
+string eleccion = Console.ReadLine();
+
+string[] cartas = { "4 de corazones", "2 de diamantes", "5 de trebol", "6 de corazones", "7 de trebol" };
+
+if (eleccion == "descartar")
+{
+    Console.WriteLine("Cuantas cartas quiere descartar");
+    int cantdescarte = int.Parse(Console.ReadLine());
+    for (int i = cantdescarte; i < cartas.Length - 1; i ++)
+    {
+        Console.WriteLine("¿Cual quiere descartar? ¿la tercera, la primera, etc?");
+        int descarte = int.Parse(Console.ReadLine());
+        cartas[descarte] = cartas[descarte | cantdescarte];
+
+
+    }
+    for (int i = 0; i < cartas.Length; i++) {
+
+        Console.WriteLine(cartas[i]);
+    }
