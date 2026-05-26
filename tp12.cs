@@ -362,3 +362,22 @@ int ejercicio6 (int compra)
     return compra;
 }
 ejercicio6(compra);
+void ejercicio7()
+{
+    Console.WriteLine("Primer pregunta: ¿Colon descubrio America?");
+    string eleccion = Console.ReadLine();
+    Console.WriteLine("Segunda pregunta: ¿La independencia de Mexico fue en 1810?");
+    string eleccion2 = Console.ReadLine();
+    Console.WriteLine("Tercera pregunta: ¿The Doors fue un grupo de rock Americano?");
+    string eleccion3 = Console.ReadLine();
+    if (eleccion == "no" || eleccion2 == "si" || eleccion3 == "no")
+    {
+        Console.WriteLine("Usted ha perdido ):");
+
+    }
+    else
+    {
+        Console.WriteLine("¡Felicidades, usted ha ganado!");
+    }
+}
+ejercicio7();
