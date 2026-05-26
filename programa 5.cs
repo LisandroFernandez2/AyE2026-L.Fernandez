@@ -31,18 +31,18 @@ while (continua)
             break;
     }
 }
-string[] buscar(string[] listanombres)
+string[] buscar()
 {
     Console.WriteLine("Ingrese el nombre a buscar");
     string buscar = Console.ReadLine();
-    for(int i = 0; i < listanombres.Length; i++)
+    for(int i = 0; i < nombre.Length; i++)
     {
-        if (buscar == listanombres[i])
+        if (buscar == nombre[i])
         {
-            Console.WriteLine("Nombre encontrado: " + listanombres[i]);
+            Console.WriteLine("Nombre encontrado: " + nombre[i]);
         }
     }
-    return listanombres;
+    return nombre;
 }
 string[] añadir(string[] listanombres)
 {
