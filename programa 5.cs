@@ -64,11 +64,11 @@ string[] numerosañadir(string[] listanumeros)
     }
     return numeros;
 }
-string[] mostrar(string[] listanombres)
+string[] mostrar()
 {
-    for (int i = 0; i < listanombres.Length - 1; i++)
+    for (int i = 0; i < nombre.Length - 1; i++)
     {
-        Console.WriteLine(listanombres[i]);
+        Console.WriteLine(nombre[i]);
     }
-    return listanombres;
+    return nombre;
 }
