@@ -1,21 +1,41 @@
-Console.WriteLine("Desea descartar cartas, pedir cartas o dejar de jugar");
+bool seguimos = true;
+int opcion = 0;
+int num_descartar, cantidad;
+string palo, numero;
+Random aleatorio = new Random();
+
+string[] posibles_palos = ["picas", "corazones", "treboles", "diamantes"];
+string[] posibles_numeros = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "A"];
+
+
+string[] carta1 = new string[2];
+string[] carta2 = new string[2];
+string[] carta3 = new string[2];
+string[] carta4 = new string[2];
+string[] carta5 = new string[2];
+string[] carta6 = new string[2];
+string[] carta7 = new string[2];
+string[] carta8 = new string[2];
+Console.WriteLine("¿Desea pedir cartas, descartar o dejar de jugar?");
 string eleccion = Console.ReadLine();
-
-string[] cartas = { "4 de corazones", "2 de diamantes", "5 de trebol", "6 de corazones", "7 de trebol" };
-
-if (eleccion == "descartar")
+while (seguimos)
 {
-    Console.WriteLine("Cuantas cartas quiere descartar");
-    int cantdescarte = int.Parse(Console.ReadLine());
-    for (int i = cantdescarte; i < cartas.Length - 1; i ++)
+
+
+
+}
+
+if (eleccion == "pedir")
+{
+    void pedir()
     {
-        Console.WriteLine("¿Cual quiere descartar? ¿la tercera, la primera, etc?");
-        int descarte = int.Parse(Console.ReadLine());
-        cartas[descarte] = cartas[descarte | cantdescarte];
+        Random random = new Random();
+        palo = posibles_palos[random.Next(0, 3)];
+        numero = posibles_numeros[random.Next(0, 13)];
+        carta1 = [posibles_numeros, posibles_palos];
+
 
 
     }
-    for (int i = 0; i < cartas.Length; i++) {
-
-        Console.WriteLine(cartas[i]);
-    }
+    pedir();
+}
