@@ -381,3 +381,25 @@ void ejercicio7()
     }
 }
 ejercicio7();
+void ejercicio8()
+{
+    Console.WriteLine("Ingrese el numero escogido");
+    int numero = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese el precio total");
+    int precio = int.Parse(Console.ReadLine());
+    double descuento = 0;
+   switch (numero)
+    {
+        case int n when n < 74:
+            descuento = precio * 0.15;
+            break;
+        case int n when n >= 74:
+            descuento = precio * 20;
+            break;
+    }
+    Console.WriteLine("La cantidad de descuento es de: " + descuento);
+
+
+
+}
+ejercicio8();
