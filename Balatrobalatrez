@@ -1,41 +1,149 @@
+
 bool seguimos = true;
 int opcion = 0;
-int num_descartar, cantidad;
-string palo, numero;
+int num_descartar,cantidad;
+string palo,numero;
 Random aleatorio = new Random();
 
-string[] posibles_palos = ["picas", "corazones", "treboles", "diamantes"];
-string[] posibles_numeros = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "A"];
 
 
-string[] carta1 = new string[2];
-string[] carta2 = new string[2];
-string[] carta3 = new string[2];
-string[] carta4 = new string[2];
-string[] carta5 = new string[2];
-string[] carta6 = new string[2];
-string[] carta7 = new string[2];
-string[] carta8 = new string[2];
-Console.WriteLine("¿Desea pedir cartas, descartar o dejar de jugar?");
-string eleccion = Console.ReadLine();
+string[] posibles_palos = ["Picas","Corazones","Treboles","diamantes"];
+string[] posibles_numeros = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+string[] carta1;
+carta1 = new string[2];
+string[] carta2;
+carta2 = new string[2];
+string[] carta3;
+carta3 = new string[2];
+string[] carta4;
+carta4 = new string[2];
+string[] carta5;
+carta5 = new string[2];
+string[] carta6;
+carta6 = new string[2];
+string[] carta7;
+carta7 = new string[2];
+string[] carta8;
+carta8 = new string[2];
+
+
 while (seguimos)
 {
-
-
+    Console.WriteLine("ingrese que quiere hacer: 1- Pedir Cartas 2-Descartar Cartas 3-Salir");
+    opcion = Convert.ToInt32(Console.ReadLine());
+    switch (opcion)
+    {
+        case 1:
+            Console.WriteLine("Pidiendo cartas...");
+            dar_cartas();
+            break;
+        case 2:
+            Console.WriteLine("Descartando cartas...");
+            descartar_cartas();
+            break;
+        case 3:
+            Console.WriteLine("Saliendo...");
+            seguimos = false;
+            break;
+        default:
+            Console.WriteLine("numero no valido");
+            break;
+    }    
 
 }
 
-if (eleccion == "pedir")
+void dar_cartas()
 {
-    void pedir()
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta1 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta2 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta3 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta4 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta5 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta6 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta7 = [palo,numero];
+    palo = posibles_palos[aleatorio.Next(0,4)];
+    numero = posibles_numeros[aleatorio.Next(0,13)];
+    carta8 = [palo,numero];
+    Console.WriteLine("Tus cartas son: ")
+    Console.WriteLine( "1- " + carta1[1] +  " de " + carta1[0] +  "\n" + 
+                       "2- " + carta2[1] +  " de " + carta2[0] +  "\n" + 
+                       "3- " + carta3[1] +  " de " + carta3[0] +  "\n" + 
+                       "4- " + carta4[1] +  " de " + carta4[0] +  "\n" + 
+                       "5- " + carta5[1] +  " de " + carta5[0] +  "\n" + 
+                       "6- " + carta6[1] +  " de " + carta6[0] +  "\n" + 
+                       "7- " + carta7[1] +  " de " + carta7[0] +  "\n" + 
+                       "8- " + carta8[1] +  " de " + carta8[0] +  "\n"
+                    );
+}
+
+void descartar_cartas()
+{
+
+    Console.WriteLine("ingrese la cantidad de cartas que quiere descartar");
+    cantidad = Convert.ToInt32(Console.ReadLine());
+    for(int i = 1; i <= cantidad; i++)
     {
-        Random random = new Random();
-        palo = posibles_palos[random.Next(0, 3)];
-        numero = posibles_numeros[random.Next(0, 13)];
-        carta1 = [posibles_numeros, posibles_palos];
-
-
+        Console.WriteLine("ingrese el numero de carta que quiere descartar");
+        num_descartar = Convert.ToInt32(Console.ReadLine());
+        palo = posibles_palos[aleatorio.Next(0,4)];
+        numero = posibles_numeros[aleatorio.Next(0,13)];
+        switch (num_descartar)
+        {
+            case 1:
+                carta1 = [palo,numero];          
+                break;
+            case 2:
+                carta2 = [palo,numero];          
+                break;
+            case 3:
+                carta3 = [palo,numero];          
+                break;
+            case 4:
+                carta4 = [palo,numero];          
+                break;
+            case 5:
+                carta5 = [palo,numero];          
+                break;
+            case 6:
+                carta6 = [palo,numero];          
+                break;
+            case 7:
+                carta7 = [palo,numero];          
+                break;
+            case 8:
+                carta8 = [palo,numero];          
+                break;
+            default:
+                Console.WriteLine("Numero no valido");
+                break;
+        }
+        Console.WriteLine("Tus cartas ahora son: ");
+        Console.WriteLine( "1- " + carta1[1] +  " de " + carta1[0] +  "\n" + 
+                        "2- " + carta2[1] +  " de " + carta2[0] +  "\n" + 
+                        "3- " + carta3[1] +  " de " + carta3[0] +  "\n" + 
+                        "4- " + carta4[1] +  " de " + carta4[0] +  "\n" + 
+                        "5- " + carta5[1] +  " de " + carta5[0] +  "\n" + 
+                        "6- " + carta6[1] +  " de " + carta6[0] +  "\n" + 
+                        "7- " + carta7[1] +  " de " + carta7[0] +  "\n" + 
+                        "8- " + carta8[1] +  " de " + carta8[0] +  "\n"
+                        );
 
     }
-    pedir();
+
 }
+
+
