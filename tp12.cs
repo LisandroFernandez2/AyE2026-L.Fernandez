@@ -403,3 +403,177 @@ void ejercicio8()
 
 }
 ejercicio8();
+void ejercicio9()
+{
+    Console.WriteLine("Ingrese su edad y yo calculo las pulsaciones que tiene que tener");
+    int edad = int.Parse(Console.ReadLine());
+    Console.WriteLine("¿Su genero es masculino o femenino?");
+    string genero = Console.ReadLine();
+    double pulsaciones = 0;
+    if (genero == "masculino")
+    {
+        pulsaciones = (210 - edad) / 10.0;
+    }
+    else if (genero == "femenino")
+    {
+        pulsaciones = (220 - edad) / 10.0;
+    }
+    Console.WriteLine("Sus pulsaciones tendrian que ser de: " + pulsaciones + " por segundo");
+
+
+}
+ejercicio9();
+void ejercicio10()
+{
+        string nombre1 = "", apellido1 = "";
+        double promedio1 = -1; 
+
+        string nombre2 = "", apellido2 = "";
+        double promedio2 = -1;
+
+        string nombre3 = "", apellido3 = "";
+        double promedio3 = -1;
+
+        
+        for (int i = 1; i <= 3; i++)
+        {
+            Console.WriteLine($"--- Datos del alumno {i} ---");
+            Console.Write("Nombre: ");
+            string nombreActual = Console.ReadLine();
+
+            Console.Write("Apellido: ");
+            string apellidoActual = Console.ReadLine();
+
+            Console.Write("Promedio: ");
+            double promedioActual = double.Parse(Console.ReadLine());
+
+            if (promedioActual > promedio1)
+            {
+           
+                nombre3 = nombre2; apellido3 = apellido2; promedio3 = promedio2;
+             
+                nombre2 = nombre1; apellido2 = apellido1; promedio2 = promedio1;
+          
+                nombre1 = nombreActual; apellido1 = apellidoActual; promedio1 = promedioActual;
+            }
+            else if (promedioActual > promedio2)// profe este lo hice con IA porque no lo entendia ):
+            {
+               
+                nombre3 = nombre2; apellido3 = apellido2; promedio3 = promedio2;
+        
+                nombre2 = nombreActual; apellido2 = apellidoActual; promedio2 = promedioActual;
+            }
+            else
+            {
+                
+                nombre3 = nombreActual; apellido3 = apellidoActual; promedio3 = promedioActual;
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine($"Abanderado: {nombre1} {apellido1} (Promedio: {promedio1})");
+        Console.WriteLine($"Primer Escolta: {nombre2} {apellido2} (Promedio: {promedio2})");
+        Console.WriteLine($"Segundo Escolta: {nombre3} {apellido3} (Promedio: {promedio3})");
+}
+ejercicio10();
+void ejercicio11()
+{
+    bool sigue = true;
+    string numeroeningles = "";
+    int numero = 0;
+    while (sigue)
+    {
+        Console.WriteLine("Ingrese un numero entre 0-9");
+        numero = int.Parse(Console.ReadLine());
+        if (numero > 9 || numero < 0)
+        {
+            sigue = true;
+        }
+        else
+        {
+            sigue = false;
+        }
+    }
+    switch (numero)
+    {
+        case 0:
+            numeroeningles = "Zero";
+            break;
+        case 1:
+            numeroeningles = "One";
+            break;
+        case 2:
+            numeroeningles = "Two";
+            break;
+        case 3:
+            numeroeningles = "Three";
+            break;
+        case 4:
+            numeroeningles = "Four";
+            break;
+        case 5:
+            numeroeningles = "Five";
+            break;
+        case 6:
+            numeroeningles = "Six";
+            break;
+        case 7:
+            numeroeningles = "Seven";
+            break;
+        case 8:
+            numeroeningles = "Eight";
+            break;
+        case 9:
+            numeroeningles = "Nine";
+            break;
+    }
+    Console.WriteLine("Su numero en ingles es " + numeroeningles);
+
+
+
+
+
+}
+ejercicio11();
+void ejercicio12()
+{
+    Console.WriteLine("Ingrese 1 para triangulo, 2 para circulo, 3 para rectangulo y 4 para hexagono");
+    int eleccion = int.Parse(Console.ReadLine());
+    double area = 0;
+    int basee = 0;
+    int altura = 0;
+    int radio = 0;
+    int perimetro = 0;
+    int apotema = 0;
+    switch (eleccion)
+    {
+        case 1:
+            Console.WriteLine("Ingrese la altura del triangulo");
+            altura = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la base del triangulo");
+            basee = int.Parse(Console.ReadLine());
+            area = (basee * altura) / 2.0;
+            break;
+        case 2:
+            Console.WriteLine("Ingres el radio del circulo");
+            radio = int.Parse(Console.ReadLine());
+            area = Math.PI * (radio * radio);
+            break;
+        case 3:
+            Console.WriteLine("Ingrese la base del rectangulo");
+            basee = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la altura del rectangulo");
+            altura = int.Parse(Console.ReadLine());
+            area = basee * altura;
+            break;
+        case 4:
+            Console.WriteLine("Ingrese el perimetro del hexagono");
+            perimetro = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el apotema del hexagono");
+            apotema = int.Parse(Console.ReadLine());
+            area = (perimetro * apotema) / 2;
+            break;
+
+    }
+    Console.WriteLine("El area de su figura es de: " + area);
+}
+ejercicio12();
