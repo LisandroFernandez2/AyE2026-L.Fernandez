@@ -170,14 +170,28 @@ void ejercicio7()
     }
     Console.WriteLine("La cantidad de veces que aparece ese numero es: " + acum);
 
-
-
-
-
-
-
-
-
-
 }
 ejercicio7();
+void ejercicio8()
+{
+    int[,] matriz = new int[4, 4]
+    {
+    { 1, 2, 3, 4 },
+    { 5, 6, 7, 8 },
+    { 9, 10, 11, 12 },
+    { 13, 14, 15, 16 }
+    };
+    int acum = 0;
+    double promedio = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int x = 0; x < 4; x++)
+        {
+            acum = acum + matriz[i, x];
+        }
+    }
+    promedio = acum / 16.0;
+
+    Console.WriteLine("El promedio de la matriz es de: " + promedio);
+}
+ejercicio8();
