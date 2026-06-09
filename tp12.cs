@@ -609,3 +609,37 @@ void ejercicio13()
     Console.WriteLine("El resultado de la compuerta logica NOR es: " + nor);
 }
 ejercicio13();
+void ejercicio14()
+{
+    int camisascompradas = 0;
+    double descuento = 0;
+    int total = 0;
+    double totalcondescuento = 0;
+    Console.WriteLine("Ingrese la cantidad de camisetas compradas");
+    camisascompradas = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese el precio total");
+    total = int.Parse(Console.ReadLine());
+    if (camisascompradas > 0 && camisascompradas <= 4)
+    {
+        descuento = (total * 12.5) / 100.0;
+        totalcondescuento = total - descuento;
+    }
+    else if (camisascompradas >= 5 && camisascompradas <= 8)
+    {
+        descuento = (total * 20) / 100.0;
+        totalcondescuento = total - descuento;
+    }
+    else
+    {
+        descuento = (total * 31.5) / 100.0;
+        totalcondescuento = total - descuento;
+    }
+    Console.WriteLine("La compra final sin descuento es de: " + total+"$");
+    Console.WriteLine("El monto del descuento es de: " + descuento+"$");
+    Console.WriteLine("La compra con descuento es de: " + totalcondescuento +"$");
+
+
+
+
+}
+ejercicio14();
