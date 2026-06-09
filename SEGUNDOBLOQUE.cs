@@ -7,6 +7,14 @@
     {
         Console.WriteLine("Intente adivinar");
         numeroingresado = int.Parse(Console.ReadLine());
+        if (numeroingresado < numero)
+        {
+            Console.WriteLine("El numero es mas alto");
+        }
+        else
+        {
+            Console.WriteLine("El numero es mas bajo");
+        }
     }
     Console.WriteLine("¡Felicidades, usted ha adivinado el numero!");
 }
