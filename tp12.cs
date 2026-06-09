@@ -577,3 +577,35 @@ void ejercicio12()
     Console.WriteLine("El area de su figura es de: " + area);
 }
 ejercicio12();
+void ejercicio13()
+{
+    Console.WriteLine("Ingrese el primer valor");
+    string primervalor = Console.ReadLine();
+    string primervalor2 = primervalor.ToLower();
+    Console.WriteLine("Ingrese el segundo valor");
+    string segundovalor = Console.ReadLine();
+    string segundovalor2 = segundovalor.ToLower();
+    bool and = false;
+    bool nor = false;
+    if (primervalor2 != "v" && primervalor2!= "f")
+    {
+        Console.WriteLine("El valor ingresado no corresponde a los parametros deseados.");
+        return;
+    }
+    if (segundovalor2 != "v" && segundovalor2 != "f")
+    {
+        Console.WriteLine("El valor ingresado no corresponde a los parametros deseados.");
+        return;
+    }
+    if (primervalor2 == "v" && segundovalor2 == "v")
+    {
+        and = true;
+    }
+    if (primervalor2 == "f" && segundovalor2 == "f")
+    {
+        nor = true;
+    }
+    Console.WriteLine("El resultado de la compuerta logica AND es: " + and);
+    Console.WriteLine("El resultado de la compuerta logica NOR es: " + nor);
+}
+ejercicio13();
