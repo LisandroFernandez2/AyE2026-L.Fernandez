@@ -643,3 +643,19 @@ void ejercicio14()
 
 }
 ejercicio14();
+void ejercicio15()
+{
+    Console.WriteLine("Ingrese un numero del 1 al 10");
+    int numero = int.Parse(Console.ReadLine());
+    if (numero >= 8 || numero == 6 || numero == 4 || numero == 1)
+    {
+        Console.WriteLine("Su numero no es primo ya que su numero no solo es divisible por 1 y por si mismo.");
+    }
+    else
+    {
+        Console.WriteLine("Su numero es primo");
+    }
+
+
+}
+ejercicio15();
