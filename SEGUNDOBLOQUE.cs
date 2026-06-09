@@ -24,3 +24,20 @@ void segundobloqueB()
     }
 }
 segundobloqueB();
+void segundobloqueC()
+{
+    bool sigue = true;
+    int segundotermino = 1;
+    int resultado = 0;
+    int primertermino = 0;
+    while (resultado < 4181)
+    {
+        resultado = primertermino + segundotermino;
+        Console.WriteLine(resultado);
+        primertermino = segundotermino;
+        segundotermino = resultado;
+
+    }
+
+}
+segundobloqueC();
