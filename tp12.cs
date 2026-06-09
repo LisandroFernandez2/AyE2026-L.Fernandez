@@ -659,3 +659,45 @@ void ejercicio15()
 
 }
 ejercicio15();
+void ejercicio16()
+{
+    int hora = 0;
+    int minuto = 0;
+    int segundo = 0;
+    int segundo2 = 0;
+    int segundo3 = 0;
+    string amopm = "";
+    Console.WriteLine("¿Ahora mismo es AM o PM?");
+    amopm = Console.ReadLine();
+    Console.WriteLine("Ingrese la hora");
+    hora = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese los minutos");
+    minuto = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese los segundos");
+    segundo = int.Parse(Console.ReadLine());
+    segundo2 = segundo + 10;
+    if (segundo2 > 59)
+    {
+        minuto++;
+        segundo2 = segundo2 - 60; 
+        segundo3 = segundo2 * (-1);
+    }
+    if (minuto > 59)
+    {
+        hora++;
+        minuto = 0;
+    }
+    if (hora > 11)
+    {
+        hora = 0;
+    }
+    if (segundo2 > 59)
+    {
+        Console.WriteLine(hora + amopm + minuto + "min " + segundo3 + "seg");
+    }
+    else
+    {
+        Console.WriteLine(hora + amopm + minuto + "min " + segundo2 + "seg");
+    }
+}
+ejercicio16();
