@@ -9,9 +9,18 @@
         numeroingresado = int.Parse(Console.ReadLine());
     }
     Console.WriteLine("¡Felicidades, usted ha adivinado el numero!");
-
-
-
-
 }
 segundobloqueA();
+void segundobloqueB()
+{
+    Console.WriteLine("Ingrese un numero");
+    int numeroingresado = int.Parse(Console.ReadLine());
+    for (int i = 1; i <= numeroingresado; i++)
+    {
+        if (numeroingresado % i == 0)
+        {
+            Console.WriteLine("Divisor encontrado: " + i);
+        }
+    }
+}
+segundobloqueB();
