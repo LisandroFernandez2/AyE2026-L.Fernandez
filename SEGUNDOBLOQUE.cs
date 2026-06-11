@@ -49,3 +49,30 @@ void segundobloqueC()
 
 }
 segundobloqueC();
+void segundobloqueD()
+{
+    Console.WriteLine("Elije una operacion, (suma, resta, multiplicacion o divison)");
+    string eleccion = Console.ReadLine();
+    Console.WriteLine("Ingrese el primer numero");
+    double primernumero = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese el segundo numero");
+    double segundonumero = int.Parse(Console.ReadLine());
+    double resultado = 0;
+    switch (eleccion)
+    {
+        case "suma":
+            resultado = primernumero + segundonumero;
+            break;
+        case "resta":
+            resultado = primernumero - segundonumero;
+            break;
+        case "multiplicacion":
+            resultado = primernumero * segundonumero;
+            break;
+        case "division":
+            resultado = primernumero / segundonumero;
+            break;
+    }
+    Console.WriteLine("El resultado de la operacion es: " + resultado);
+}
+segundobloqueD();
