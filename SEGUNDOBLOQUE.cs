@@ -102,18 +102,7 @@ void segundobloqueF()
         Random aleatorio = new Random();
         numerodeturnos = aleatorio.Next(0, 100);
         Console.WriteLine("Paciente " + nombres[i] + " numero de orden: " + numerodeturnos);
-
-
-
     }
-
-
-
-
-
-
-
-
 }
 segundobloqueF();
 void segundobloqueG()
@@ -123,15 +112,7 @@ void segundobloqueG()
         if (i % 2 == 0)
         {
             Console.WriteLine("Numero par encontrado: " + i); 
-        }
-         
+        }     
   }
-
-
-
-
-
-
-
 }
 segundobloqueG();
