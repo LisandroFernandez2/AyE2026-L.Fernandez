@@ -76,3 +76,62 @@ void segundobloqueD()
     Console.WriteLine("El resultado de la operacion es: " + resultado);
 }
 segundobloqueD();
+void segundobloqueE()
+{
+    Console.WriteLine("Ingresa un numero y yo te calculo el factorial");
+    int numeroingresado = int.Parse(Console.ReadLine());
+    int resultado = 1;
+    for (int i = 1; i <= numeroingresado; i++)
+    {
+        resultado = resultado * i;
+        
+    }
+    Console.WriteLine("El factorial de su numero ingresado es " + resultado);
+}
+segundobloqueE();
+void segundobloqueF()
+{
+    Console.WriteLine("Cuantos turnos quiere generar");
+    int turnos = int.Parse(Console.ReadLine());
+    int numerodeturnos = 0;
+    string[] nombres = new string[turnos];
+    for (int i = 0; i <= turnos - 1; i++)
+    {
+        Console.WriteLine("Ingrese un nombre");
+        nombres[i] = Console.ReadLine();
+        Random aleatorio = new Random();
+        numerodeturnos = aleatorio.Next(0, 100);
+        Console.WriteLine("Paciente " + nombres[i] + " numero de orden: " + numerodeturnos);
+
+
+
+    }
+
+
+
+
+
+
+
+
+}
+segundobloqueF();
+void segundobloqueG()
+{
+  for (int i = 1; i <= 100; i++)
+   {
+        if (i % 2 == 0)
+        {
+            Console.WriteLine("Numero par encontrado: " + i); 
+        }
+         
+  }
+
+
+
+
+
+
+
+}
+segundobloqueG();
