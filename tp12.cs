@@ -701,3 +701,226 @@ void ejercicio16()
     }
 }
 ejercicio16();
+void ejercicio17()
+{
+    Console.WriteLine("Ingrese la variable A");
+    int a = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese la variable B");
+    int b = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese la variable C");
+    int c = int.Parse(Console.ReadLine());
+
+    double discriminante = (b * b) - (4 * a * c);
+
+    if (discriminante < 0)
+    {
+       
+        Console.WriteLine("No hay soluciones reales");
+    }
+    else
+    {
+       
+        double resultadosuma = (-b + Math.Sqrt(discriminante)) / (2 * a);
+        double resultadoresta = (-b - Math.Sqrt(discriminante)) / (2 * a);
+
+        Console.WriteLine("La solución usando la suma es: " + resultadosuma);
+        Console.WriteLine("La solución usando la resta es: " + resultadoresta);
+    }
+}
+ejercicio17();
+void ejercicio18() {
+    Console.WriteLine("Ingrese la unidad de media inicial: metros, pies, centimetros, pulgadas.");
+    string eleccion = Console.ReadLine();
+    string segundaeleccion = "";
+    int unidadinicial = 0;
+    double resultadopasado = 0;
+    switch (eleccion)
+    {
+        case "metros":
+            Console.WriteLine("Ingrese la cantidad de metros");
+            unidadinicial = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que unidad desea pasarlo");
+            segundaeleccion = Console.ReadLine();
+            switch (segundaeleccion)
+            {
+                case "pies":
+                    resultadopasado = unidadinicial * 3.281;
+                    break;
+                case "centimetros":
+                    resultadopasado = unidadinicial * 100;
+                    break;
+                case "pulgadas":
+                    resultadopasado = unidadinicial * 39.3701;
+                    break;
+
+            }
+            break;
+        case "centimetros":
+            Console.WriteLine("Ingrese la cantidad de centimetros");
+            unidadinicial = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que unidad desea pasarlo");
+            segundaeleccion = Console.ReadLine();
+            switch (segundaeleccion)
+            {
+                case "pies":
+                    resultadopasado = unidadinicial * 0.03281;
+                    break;
+                case "metros":
+                    resultadopasado = unidadinicial * 0.01;
+                    break;
+                case "pulgadas":
+                    resultadopasado = unidadinicial * 0.393701;
+                    break;
+            }
+            break;
+        case "pies":
+            Console.WriteLine("Ingrese la cantidad de pies");
+            unidadinicial = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que unidad desea pasarlo");
+            segundaeleccion = Console.ReadLine();
+            switch (segundaeleccion)
+            {
+                case "metros":
+                    resultadopasado = unidadinicial * 0.3048;
+                    break;
+                case "centimetros":
+                    resultadopasado = unidadinicial * 30.48;
+                    break;
+                case "pulgadas":
+                    resultadopasado = unidadinicial * 12;
+                    break;
+            }
+            break;
+        case "pulgadas":
+            Console.WriteLine("Ingrese la cantidad de pulgadas");
+            unidadinicial = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que unidad desea pasarlo");
+            segundaeleccion = Console.ReadLine();
+            switch (segundaeleccion)
+            {
+                case "metros":
+                    resultadopasado = unidadinicial * 0.0254;
+                    break;
+                case "centimetros":
+                    resultadopasado = unidadinicial * 2.54;
+                    break;
+                case "pies":
+                    resultadopasado = unidadinicial * 0.0833333;
+                    break;
+            }
+            break;
+    }
+    Console.WriteLine("El resultado convertido es de " + resultadopasado);
+
+}
+ejercicio18();
+void ejercicio19()
+{
+    Console.Write("Ingrese un número natural (1-3999): ");
+    int numero = int.Parse(Console.ReadLine());
+
+    if (numero < 1 || numero > 3999)
+    {
+        Console.WriteLine("El número debe estar entre 1 y 3999.");
+        return;
+    }
+
+    string[] miles = { "", "M", "MM", "MMM" };
+    string[] centenas = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+    string[] decenas = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+    string[] unidades = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+
+    string romano =
+        miles[numero / 1000] +
+        centenas[(numero % 1000) / 100] +
+        decenas[(numero % 100) / 10] +
+        unidades[numero % 10];
+
+    Console.WriteLine("Número romano: " + romano);
+
+}
+ejercicio19();
+void ejercicio20()
+{
+    Console.Write("Estado del interruptor 1 (0 o 1): ");
+    int i1 = int.Parse(Console.ReadLine());
+
+    Console.Write("Estado del interruptor 2 (0 o 1): ");
+    int i2 = int.Parse(Console.ReadLine());
+
+    Console.Write("Estado del interruptor 3 (0 o 1): ");
+    int i3 = int.Parse(Console.ReadLine());
+
+    int cerrados = i1 + i2 + i3;
+
+    if (cerrados >= 2)
+    {
+        Console.WriteLine("El equipo funcionará.");
+    }
+    else
+    {
+        Console.WriteLine("El equipo NO funcionará.");
+    }
+
+
+}
+ejercicio20();
+void ejercicio21()
+{
+    Console.WriteLine("Ingrese tres numeros");
+    int[] numeros = new int[3];
+    for (int i = 0; i < 3; i++)
+    {
+        numeros[i] = int.Parse(Console.ReadLine());
+    }
+    Console.WriteLine("Ingrese otros tres numeros");
+    int[] segundosnumeros = new int[3];
+    for (int i = 0; i < 3; i++)
+    {
+        segundosnumeros[i] = int.Parse(Console.ReadLine());
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        
+        if (numeros[i] == segundosnumeros[0])
+        {
+            Console.WriteLine("Numero corresponiente a la interseccion de los dos conjuntos encontrado: " + numeros[i]);
+        }
+        else if (numeros[i] == segundosnumeros[1])
+        {
+            Console.WriteLine("Numero corresponiente a la interseccion de los dos conjuntos encontrado: " + numeros[i]);
+        }
+        else if (numeros[i] == segundosnumeros[2])
+        {
+            Console.WriteLine("Numero corresponiente a la interseccion de los dos conjuntos encontrado: " + numeros[i]);
+        }
+    }
+
+
+
+}
+ejercicio21();
+void ejercicio22()
+{
+    Console.Write("Ingrese el lado A: ");
+    double a = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Ingrese el lado B: ");
+    double b = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Ingrese el lado C: ");
+    double c = Convert.ToDouble(Console.ReadLine());
+        if (a == b && b == c)
+        {
+            Console.WriteLine("EQUILATERO");
+        }
+        else if (a == b || b == c || a == c)
+        {
+            Console.WriteLine("ISOSCELES");
+        }
+        else
+        {
+            Console.WriteLine("ESCALENO");
+        }
+}
+ejercicio22();
