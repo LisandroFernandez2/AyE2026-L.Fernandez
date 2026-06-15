@@ -116,3 +116,23 @@ void segundobloqueG()
   }
 }
 segundobloqueG();
+void segundobloqueH()
+{
+    bool sigue = true;
+    while (sigue)
+    {
+        int celcius = 0;
+        double fahrenheit = 0;
+        Console.WriteLine("¿Desea continuar? (s/n)");
+        string eleccion = Console.ReadLine();
+        if (eleccion == "n")
+        {
+            sigue = false;
+        }
+        Console.WriteLine("Ingrese la temperatura en celcius");
+        celcius = int.Parse(Console.ReadLine());
+        fahrenheit = (celcius * 9.0/5.0) + 32.0;
+        Console.WriteLine("La temperatura en fahrenheit es: " + fahrenheit);
+    }
+}
+segundobloqueH();
