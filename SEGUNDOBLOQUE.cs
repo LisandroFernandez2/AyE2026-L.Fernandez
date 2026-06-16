@@ -136,3 +136,101 @@ void segundobloqueH()
     }
 }
 segundobloqueH();
+void segundobloqueI()
+{
+
+    Console.WriteLine("Ingrese un número");
+    int numero = int.Parse(Console.ReadLine());
+    if (numero <= 3)
+    {
+        Console.WriteLine("Su numero es primo");
+    }
+    if (numero > 3)
+    {
+        if (numero % 2 == 0 || numero % 3 == 0)
+        {
+            Console.WriteLine("Su numero no es primo");
+        }
+        else
+        {
+            Console.WriteLine("Su numero es primo");
+        }
+    }
+}
+segundobloqueI();
+void segundobloqueJ()
+{
+    string[] nombres = new string[100];
+    int cantidad = 0;
+
+    while (true)
+    {
+        Console.WriteLine("Ingrese un nombre (fin para terminar):");
+        string nombre = Console.ReadLine();
+
+        if (nombre == "fin")
+        {
+            break;
+        }
+
+        nombres[cantidad] = nombre;
+        cantidad++;
+    }
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        Console.WriteLine("Hola " + nombres[i]);
+    }
+}
+segundobloqueJ();
+void segundobloqueK()
+{
+    string nombre;
+    string aux = "";
+    bool sigue = true;
+    int contador = 0;
+    while (sigue)
+    {
+        Console.WriteLine("Ingrese un nombre");
+        nombre = Console.ReadLine();
+        if (aux == nombre)
+        {
+            Console.WriteLine("La cantidad de nombres ingresados antes del duplicado es de: " + (contador - 1));
+            sigue = false;
+
+        }
+        aux = nombre;
+        contador++;
+
+    }
+}
+segundobloqueK();
+void segundobloqueL()
+{
+    for (int i  = 100; i <= 200; i++)
+    {
+        int resultado = i % 10;
+        if (i % 7 == 0 && resultado == 3)
+        {
+            Console.WriteLine(i);
+        }
+
+    }
+}
+segundobloqueL();
+void segundobloqueM()
+{
+    int total = 0;
+    int contador = 0;
+    int precio = 0;
+    while (total < 1000)
+    {
+        Console.WriteLine("Ingrese el precio");
+        precio = int.Parse(Console.ReadLine());
+        total = total + precio;
+        contador++;
+
+    }
+    Console.WriteLine("La cantidad de productos cargados es de: " + contador);
+}
+segundobloqueM();
