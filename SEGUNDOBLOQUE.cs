@@ -234,3 +234,118 @@ void segundobloqueM()
     Console.WriteLine("La cantidad de productos cargados es de: " + contador);
 }
 segundobloqueM();
+void segundobloqueN()
+{
+    Console.WriteLine("Ingrese su nombre");
+    string nombre = Console.ReadLine();
+    bool sigue = true;
+    int edad = 0;
+    while (sigue)
+    {
+        try
+        {
+            Console.WriteLine("Ingrese su edad");
+            edad = int.Parse(Console.ReadLine());
+            sigue = false;
+        }
+        catch
+        {
+            Console.WriteLine("Error: Debes ingresar un número");
+        }
+    }
+    Console.WriteLine("Ingrese su mail");
+    bool sigue2 = true;
+    while (sigue2)
+    {
+        string mail = Console.ReadLine();
+        bool valido = false;
+        foreach (char c in mail)
+        {
+            if (c == '@')
+            {
+                valido = true;
+            }
+
+        }
+        if (valido == true)
+        {
+            Console.WriteLine("Nombre - " + nombre);
+            Console.WriteLine("Edad - " + edad);
+            Console.WriteLine("Mail - " + mail);
+            sigue2 = false;
+        }
+        else
+        {
+            Console.WriteLine("Su mail no tiene @");
+        }
+    }
+
+
+}
+segundobloqueN();
+void segundobloqueO()
+{
+    Console.WriteLine("Ingrese un numero");
+    string numero = Console.ReadLine();
+    foreach (char c in numero)
+    {
+        Console.WriteLine(c);
+    }
+
+
+
+}
+segundobloqueO();
+void segundobloqueP()
+{
+    string[] piedrapapeltijera = new string[3];
+    piedrapapeltijera = ["piedra", "papel", "tijera"];
+    Random aleatorio = new Random();
+    string almomento;
+    int contador = 3;
+    int contadorbot = 0;
+    int contadorusuario = 0;
+    while (contador > 0)
+    {
+        Console.WriteLine("Piedra, papel o tijera");
+        string eleccion = Console.ReadLine();
+        almomento = piedrapapeltijera[aleatorio.Next(0, 3)];
+        Console.WriteLine(almomento);
+        if (almomento == eleccion)
+        {
+            Console.WriteLine("Ronda empatada");
+            contador--;
+        }
+        else if(almomento == "piedra" && eleccion == "tijera" || almomento == "tijera" && eleccion == "papel" || almomento == "papel" && eleccion == "piedra")
+        {
+            Console.WriteLine("El bot gana la ronda");
+            contadorbot++;
+            contador--;
+        }
+        else 
+        {
+            Console.WriteLine("Usted ha ganado esta ronda");
+            contadorusuario++;
+            contador--;
+        }
+    }
+    if (contadorbot > contadorusuario)
+    {
+        Console.WriteLine("El bot fue el que gano mas rondas");
+    }
+    else if (contadorbot < contadorusuario)
+    {
+        Console.WriteLine("Tu ganaste mas rondas");
+    }
+    else
+    {
+        Console.WriteLine("Hubo un empate");
+    }
+
+
+
+
+
+
+}
+segundobloqueP();
