@@ -341,11 +341,56 @@ void segundobloqueP()
     {
         Console.WriteLine("Hubo un empate");
     }
-
-
-
-
-
-
 }
 segundobloqueP();
+void segundobloqueQ()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        Random aleatorio = new Random();
+        int random = aleatorio.Next(0,100);
+        if (random > 50)
+        {
+            Console.WriteLine(random);
+        }
+    }
+}
+segundobloqueQ();
+
+void segundobloqueR()
+{
+    Console.WriteLine("Ingrese los nombres");
+    string[] nombres = new string[5];
+    for (int i = 0; i < 5; i++)
+    {
+        nombres[i] = Console.ReadLine();
+
+    }
+    Console.WriteLine("Ingrese las notas");
+    int[] notas = new int[5];
+    double acum = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        notas[i] = Convert.ToInt32(Console.ReadLine());
+        acum = acum + notas[i];
+        Console.WriteLine("Alumno " + nombres[i] + " tiene nota " + notas[i]);
+    }
+    Console.WriteLine("El promedio gral. fue de " + acum / 5.0);
+    int mayor = notas.Max();
+    Console.WriteLine("La mayor nota fue " + mayor);
+
+}
+segundobloqueR();
+
+void segundobloqueS()
+{
+    string[] abecedario = new string[27];
+    abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+    "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+    for (int i = abecedario.Length - 1; i >= 0; i--)
+    {
+        Console.WriteLine(abecedario[i]);
+    }
+}
+segundobloqueS();
