@@ -1,4 +1,95 @@
-﻿void segundobloqueA()
+﻿Console.WriteLine("Por favor, ingrese el numero del ejercicio al cual desea ingresar");
+string ingresado = Console.ReadLine();
+string nuevoingresado = ingresado.ToUpper();
+bool sigue = true;
+while (sigue)
+{
+    switch (nuevoingresado)
+    {
+        case "A":
+            segundobloqueA();
+            sigue = false;
+            break;
+        case "B":
+            segundobloqueB();
+            sigue = false;
+            break;
+        case "C":
+            segundobloqueC();
+            sigue = false;
+            break;
+        case "D":
+            segundobloqueD();
+            sigue = false;
+            break;
+        case "E":
+            segundobloqueE();
+            sigue = false;
+            break;
+        case "F":
+            segundobloqueF();
+            sigue = false;
+            break;
+        case "G":
+            segundobloqueG();
+            sigue = false;
+            break;
+        case "H":
+            segundobloqueH();
+            sigue = false;
+            break;
+        case "I":
+            segundobloqueI();
+            sigue = false;
+            break;
+        case "J":
+            segundobloqueJ();
+            sigue = false;
+            break;
+        case "K":
+            segundobloqueK();
+            sigue = false;
+            break;
+        case "L":
+            segundobloqueL();
+            sigue = false;
+            break;
+        case "M":
+            segundobloqueM();
+            sigue = false;
+            break;
+        case "N":
+            segundobloqueN();
+            sigue = false;
+            break;
+        case "O":
+            segundobloqueO();
+            sigue = false;
+            break;
+        case "P":
+            segundobloqueP();
+            sigue = false;
+            break;
+        case "Q":
+            segundobloqueQ();
+            sigue = false;
+            break;
+        case "R":
+            segundobloqueR();
+            sigue = false;
+            break;
+        case "S":
+            segundobloqueS();
+            sigue = false;
+            break;
+        default:
+            Console.WriteLine("Parametros erroneos, ingrese el numero del ejercicio al cual desea ingresar");
+            ingresado = Console.ReadLine();
+            nuevoingresado = ingresado.ToUpper();
+            break;
+    }
+}
+void segundobloqueA()
 {
     Random aleatorio = new Random();
     int numero = aleatorio.Next(0, 11);
@@ -18,7 +109,7 @@
     }
     Console.WriteLine("¡Felicidades, usted ha adivinado el numero!");
 }
-segundobloqueA();
+
 void segundobloqueB()
 {
     Console.WriteLine("Ingrese un numero");
@@ -31,7 +122,7 @@ void segundobloqueB()
         }
     }
 }
-segundobloqueB();
+
 void segundobloqueC()
 {
     bool sigue = true;
@@ -48,7 +139,7 @@ void segundobloqueC()
     }
 
 }
-segundobloqueC();
+
 void segundobloqueD()
 {
     Console.WriteLine("Elije una operacion, (suma, resta, multiplicacion o divison)");
@@ -75,7 +166,7 @@ void segundobloqueD()
     }
     Console.WriteLine("El resultado de la operacion es: " + resultado);
 }
-segundobloqueD();
+
 void segundobloqueE()
 {
     Console.WriteLine("Ingresa un numero y yo te calculo el factorial");
@@ -84,11 +175,11 @@ void segundobloqueE()
     for (int i = 1; i <= numeroingresado; i++)
     {
         resultado = resultado * i;
-        
+
     }
     Console.WriteLine("El factorial de su numero ingresado es " + resultado);
 }
-segundobloqueE();
+
 void segundobloqueF()
 {
     Console.WriteLine("Cuantos turnos quiere generar");
@@ -104,18 +195,18 @@ void segundobloqueF()
         Console.WriteLine("Paciente " + nombres[i] + " numero de orden: " + numerodeturnos);
     }
 }
-segundobloqueF();
+
 void segundobloqueG()
 {
-  for (int i = 1; i <= 100; i++)
-   {
+    for (int i = 1; i <= 100; i++)
+    {
         if (i % 2 == 0)
         {
-            Console.WriteLine("Numero par encontrado: " + i); 
-        }     
-  }
+            Console.WriteLine("Numero par encontrado: " + i);
+        }
+    }
 }
-segundobloqueG();
+
 void segundobloqueH()
 {
     bool sigue = true;
@@ -131,11 +222,11 @@ void segundobloqueH()
         }
         Console.WriteLine("Ingrese la temperatura en celcius");
         celcius = int.Parse(Console.ReadLine());
-        fahrenheit = (celcius * 9.0/5.0) + 32.0;
+        fahrenheit = (celcius * 9.0 / 5.0) + 32.0;
         Console.WriteLine("La temperatura en fahrenheit es: " + fahrenheit);
     }
 }
-segundobloqueH();
+
 void segundobloqueI()
 {
 
@@ -157,7 +248,7 @@ void segundobloqueI()
         }
     }
 }
-segundobloqueI();
+
 void segundobloqueJ()
 {
     string[] nombres = new string[100];
@@ -182,7 +273,7 @@ void segundobloqueJ()
         Console.WriteLine("Hola " + nombres[i]);
     }
 }
-segundobloqueJ();
+
 void segundobloqueK()
 {
     string nombre;
@@ -204,10 +295,10 @@ void segundobloqueK()
 
     }
 }
-segundobloqueK();
+
 void segundobloqueL()
 {
-    for (int i  = 100; i <= 200; i++)
+    for (int i = 100; i <= 200; i++)
     {
         int resultado = i % 10;
         if (i % 7 == 0 && resultado == 3)
@@ -217,7 +308,7 @@ void segundobloqueL()
 
     }
 }
-segundobloqueL();
+
 void segundobloqueM()
 {
     int total = 0;
@@ -233,7 +324,7 @@ void segundobloqueM()
     }
     Console.WriteLine("La cantidad de productos cargados es de: " + contador);
 }
-segundobloqueM();
+
 void segundobloqueN()
 {
     Console.WriteLine("Ingrese su nombre");
@@ -282,7 +373,7 @@ void segundobloqueN()
 
 
 }
-segundobloqueN();
+
 void segundobloqueO()
 {
     Console.WriteLine("Ingrese un numero");
@@ -295,7 +386,7 @@ void segundobloqueO()
 
 
 }
-segundobloqueO();
+
 void segundobloqueP()
 {
     string[] piedrapapeltijera = new string[3];
@@ -316,13 +407,13 @@ void segundobloqueP()
             Console.WriteLine("Ronda empatada");
             contador--;
         }
-        else if(almomento == "piedra" && eleccion == "tijera" || almomento == "tijera" && eleccion == "papel" || almomento == "papel" && eleccion == "piedra")
+        else if (almomento == "piedra" && eleccion == "tijera" || almomento == "tijera" && eleccion == "papel" || almomento == "papel" && eleccion == "piedra")
         {
             Console.WriteLine("El bot gana la ronda");
             contadorbot++;
             contador--;
         }
-        else 
+        else
         {
             Console.WriteLine("Usted ha ganado esta ronda");
             contadorusuario++;
@@ -342,20 +433,20 @@ void segundobloqueP()
         Console.WriteLine("Hubo un empate");
     }
 }
-segundobloqueP();
+
 void segundobloqueQ()
 {
     for (int i = 0; i < 10; i++)
     {
         Random aleatorio = new Random();
-        int random = aleatorio.Next(0,100);
+        int random = aleatorio.Next(0, 100);
         if (random > 50)
         {
             Console.WriteLine(random);
         }
     }
 }
-segundobloqueQ();
+
 
 void segundobloqueR()
 {
@@ -380,12 +471,12 @@ void segundobloqueR()
     Console.WriteLine("La mayor nota fue " + mayor);
 
 }
-segundobloqueR();
+
 
 void segundobloqueS()
 {
     string[] abecedario = new string[27];
-    abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+    abecedario = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
     "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     for (int i = abecedario.Length - 1; i >= 0; i--)
@@ -393,4 +484,3 @@ void segundobloqueS()
         Console.WriteLine(abecedario[i]);
     }
 }
-segundobloqueS();
