@@ -43,3 +43,113 @@
 
 }
 tercerbloqueA();
+void tercerbloqueB()
+{
+    bool valido = false;
+    int numero = 0;
+    while (valido == false)
+    {
+        Console.WriteLine("Ingresa un numero");
+        numero = int.Parse(Console.ReadLine());
+        if (numero < 1)
+        {
+            Console.WriteLine("No puede ser menor a uno.");
+        }
+        else
+        {
+            valido = true;
+        }
+    }
+    for (int i = numero; i > 0; i--)
+    {
+        if (i % 2 == 0)
+        {
+            Console.WriteLine(i);
+        }
+    }
+
+
+
+
+}
+tercerbloqueB();
+
+void tercerbloqueC()
+{
+    Console.WriteLine("Ingrese una palabra");
+    string palabra = Console.ReadLine();
+    Console.WriteLine("Ingrese una letra");
+    char letra = Convert.ToChar(Console.ReadLine());
+    int contador = 0;
+    foreach (char caracter in palabra)
+    {
+      
+        if (caracter == letra)
+        {
+            contador++;
+        }
+    }
+    Console.WriteLine("La letra " + letra + " aparece un total de " + contador + " veces en la palabra " + palabra);
+
+
+
+
+
+
+}
+tercerbloqueC();
+void tercerbloqueD()
+{
+    int dinero = 1000;
+    bool sigue = true;
+    while (sigue)
+    {
+        Console.WriteLine("¿Que desea hacer? - R (retirar), D (depositar) o S (salir)?");
+        string eleccion = Console.ReadLine();
+        switch (eleccion)
+        {
+            case "R":
+                Console.WriteLine("¿Cuanto desea retirar?");
+                int retirar = int.Parse(Console.ReadLine());
+                if (retirar > dinero)
+                {
+                    Console.WriteLine("No puede retirar mas de lo que tiene");
+                    break;
+                }
+                else
+                {
+                    dinero = dinero - retirar;
+                    Console.WriteLine("Su dinero actual es: " + dinero);
+                    break;
+                }
+            case "D":
+                Console.WriteLine("¿Cuanto desea depositar?");
+                int deposito = int.Parse(Console.ReadLine());
+                dinero = dinero + deposito;
+                Console.WriteLine("Su dinero actual es: " + dinero);
+                break;
+            case "S":
+                Console.WriteLine("Saliendo del sistema...");
+                sigue = false;
+                break;
+        }
+    }
+}
+tercerbloqueD();
+void tercerbloqueE()
+{
+    for (int i = 0; i <= 50; i++)
+    {
+        if (i % 2 == 0 && i % 5 != 0)
+        {
+            Console.WriteLine("Numero divisible por 2: " + i);
+        }
+        if (i % 5 == 0 && i % 2 != 0)
+        {
+            Console.WriteLine("Numero divisible por 5: " + i);
+        }
+
+
+    }
+}
+tercerbloqueE();
