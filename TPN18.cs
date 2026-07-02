@@ -49,3 +49,37 @@ namespace ConsoleApp2
         
     }
 }
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        public struct Producto
+        {
+            public string Nombre { get; set; }
+            public int Codigo { get; set; }
+            public double Precio { get; set; }
+        public Producto(string n, int c, double p)
+            {
+                Nombre = n;
+                Codigo = c;
+                Precio = p;
+            }
+
+
+            static void Main(string[] args)
+            {
+                Producto[] inventario = new Producto[3];
+                inventario[0] = new Producto("Tomate",2569,25.55);
+                inventario[1] = new Producto("Atun", 2456, 5.67);
+                inventario[2] = new Producto("Polenta", 1111, 3.20);
+                int acum = 0;
+                foreach (var prod in inventario)
+                {
+
+                    Console.WriteLine($"Producto: {prod.Nombre}  Código: {prod.Codigo}  Precio: ${prod.Precio}");
+                }
+                
+            }
+        }
+    }
+}
