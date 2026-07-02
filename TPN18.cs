@@ -83,3 +83,39 @@ namespace ConsoleApp1
         }
     }
 }
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        public struct Estudiante
+        {
+            public string Nombre { get; set; }
+            public double[] Notas { get; set; }
+
+
+            public Estudiante(string n, double[] notas)
+            {
+                Nombre = n;
+                Notas = notas;
+            }
+
+            public double CalcularPromedio()
+            {
+                double total = 0;
+                for (int i = 0; i < Notas.Length; i++)
+                {
+                    total += Notas[i];
+                }
+               return total / Notas.Length;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Estudiante alumno = new Estudiante("Lisandro", new double[] { 8.5, 9.0, 7.5 });
+            Console.WriteLine($"Estudiante: {alumno.Nombre}");
+            Console.WriteLine($"Promedio Final: {alumno.CalcularPromedio()}");
+
+        }
+
+    }
+}
