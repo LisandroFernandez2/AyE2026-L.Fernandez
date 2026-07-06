@@ -153,3 +153,128 @@ void tercerbloqueE()
     }
 }
 tercerbloqueE();
+void tercerbloqueF()
+{
+    char[] abecedario = new char[]
+        {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        };
+
+
+    Console.Write("Introduce una palabra: ");
+    string palabra = Console.ReadLine().ToLower();
+
+
+    string[] resultado = new string[palabra.Length];
+
+
+    for (int i = 0; i < palabra.Length; i++)
+    {
+        char letraPalabra = palabra[i];
+        bool encontrada = false;
+
+        for (int j = 0; j < abecedario.Length; j++)
+        {
+            if (abecedario[j] == letraPalabra)
+            {
+                resultado[i] = (j + 1).ToString();
+                encontrada = true;
+                break;
+            }
+        }
+
+        if (!encontrada)
+        {
+            resultado[i] = letraPalabra.ToString();
+        }
+    }
+
+    Console.WriteLine("Resultado numérico: - ");
+    Console.WriteLine(string.Join("-", resultado));
+
+
+
+
+}
+tercerbloqueF();
+
+void tercerbloqueG()
+{
+    int secreto = 5;
+    int intentos = 0;
+    while (true)
+    {
+
+        Console.WriteLine("Ingrese un numero");
+        int adivinanza = int.Parse(Console.ReadLine());
+        if (adivinanza > secreto)
+        {
+            Console.WriteLine("El numero secreto es menor");
+            intentos++;
+        }
+        else if (adivinanza < secreto)
+        {
+            Console.WriteLine("El numero secreto es mayor");
+            intentos++;
+        }
+        else
+        {
+            Console.WriteLine($"Numero encontrado en {intentos} intentos.");
+            break;
+        }
+
+    }
+}
+tercerbloqueG();
+
+void tercerbloqueH()
+{
+    Console.WriteLine("Ingrese una palabra");
+    string palabra = Console.ReadLine();
+    string PalabraInvertida = "";
+    for (int i = palabra.Length - 1; i >= 0; i--)
+    {
+        PalabraInvertida += palabra[i];
+    }
+    Console.WriteLine("Palabra invertida: " + PalabraInvertida);
+
+
+
+}
+tercerbloqueH();
+void tercerbloqueI()
+{
+ 
+    char[] minusculas = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+    char[] mayusculas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+    int[] contadores = new int[26];
+
+
+    Console.WriteLine("Ingrese una palabra");
+    string palabra = Console.ReadLine();
+    foreach (char c in palabra)
+    {
+        for (int i = 0; i < 26; i++)
+        {
+           
+            if (c == minusculas[i] || c == mayusculas[i])
+            {
+                contadores[i]++;
+            }
+        }
+    }
+
+ 
+    for (int i = 0; i < 26; i++)
+    {
+        if (contadores[i] > 0)
+        {
+            char letra = minusculas[i];
+            Console.WriteLine(letra + ": " + contadores[i]);
+        }
+    }
+
+}
+tercerbloqueI();
