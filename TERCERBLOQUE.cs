@@ -278,3 +278,77 @@ void tercerbloqueI()
 
 }
 tercerbloqueI();
+void tercerbloqueJ()
+{
+    Console.WriteLine("Ingrese nombre de usuario");
+    string NombreDeUsuario = Console.ReadLine();
+    string contraseñaVerdadera = "futbolpumabuceo";
+    int acum = 3;
+    while (acum > 0)
+    {
+        Console.WriteLine("Ingrese la contraseña");
+        string contraseña = Console.ReadLine();
+        if (contraseña == contraseñaVerdadera)
+        {
+            Console.WriteLine("Bienvenido, " + NombreDeUsuario);
+            acum = 0;
+        }
+        else
+        {
+            acum--;
+            if (acum > 0)
+            {
+                Console.WriteLine("Contraseña incorrecta, por favor, ingrese nuevamente");
+                
+            }
+            else
+            {
+                Console.WriteLine("Se agotaron los intentos");
+            }
+        }
+        
+    }
+
+
+
+
+}
+
+void tercerbloqueK()
+{
+    bool Valido = false;
+    int numero = 0;
+    while (Valido == false)
+    {
+        Console.WriteLine("Ingrese un numero");
+        numero = int.Parse(Console.ReadLine());
+        if (numero <= 100 && numero > 0)
+        {
+            Valido = true;
+        }
+        else
+        {
+            Console.WriteLine("Numero invalido, por favor ingrese un numero entre 1 y 100");
+        }
+    }
+    if (numero <= 25)
+    {
+        Console.WriteLine("Su numero se encuentra dentro del rango 0-25");
+    }
+    else if (numero > 25 && numero <= 50)
+    {
+        Console.WriteLine("Su numero se encuentra dentro del rango 26-50");
+    }
+    else if (numero > 50 && numero <= 75)
+    {
+        Console.WriteLine("Su numero se encuentra dentro del rango 51-75");
+    }
+    else
+    {
+        Console.WriteLine("Su numero se encuentra dentro del rango 76-100");
+    }
+
+
+
+
+}
