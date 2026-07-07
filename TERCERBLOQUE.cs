@@ -448,4 +448,3 @@ void tercerbloqueN()
         indiceVocal = (indiceVocal + 1) % vocales.Length;
     }
 }
-
