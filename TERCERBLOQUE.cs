@@ -1,7 +1,86 @@
-﻿void tercerbloqueA()
+﻿Console.WriteLine("Por favor, ingrese el numero del ejercicio al cual desea ingresar");
+string ingresado = Console.ReadLine();
+string nuevoingresado = ingresado.ToUpper();
+bool sigue = true;
+while (sigue)
+{
+    switch (nuevoingresado)
+    {
+        case "A":
+            tercerbloqueA();
+            sigue = false;
+            break;
+        case "B":
+            tercerbloqueB();
+            sigue = false;
+            break;
+        case "C":
+            tercerbloqueC();
+            sigue = false;
+            break;
+        case "D":
+            tercerbloqueD();
+            sigue = false;
+            break;
+        case "E":
+            tercerbloqueE();
+            sigue = false;
+            break;
+        case "F":
+            tercerbloqueF();
+            sigue = false;
+            break;
+        case "G":
+            tercerbloqueG();
+            sigue = false;
+            break;
+        case "H":
+            tercerbloqueH();
+            sigue = false;
+            break;
+        case "I":
+            tercerbloqueI();
+            sigue = false;
+            break;
+        case "J":
+            tercerbloqueJ();
+            sigue = false;
+            break;
+        case "K":
+            tercerbloqueK();
+            sigue = false;
+            break;
+        case "L":
+            tercerbloqueL();
+            sigue = false;
+            break;
+        case "M":
+            tercerbloqueM();
+            sigue = false;
+            break;
+        case "N":
+            tercerbloqueN();
+            sigue = false;
+            break;
+        default:
+            Console.WriteLine("Parametros erroneos, ingrese el numero del ejercicio al cual desea ingresar");
+            ingresado = Console.ReadLine();
+            nuevoingresado = ingresado.ToUpper();
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+void tercerbloqueA()
 {
     string[] candidatos = new string[3];
-    candidatos = ["Patricia Fedellrich","Lisandro Fernandez De Kirchner","Javier Matilei"];
+    candidatos = ["Patricia Fedellrich", "Lisandro Fernandez De Kirchner", "Javier Matilei"];
     int[] cantidaddevotos = new int[3];
     cantidaddevotos = [0, 0, 0];
     string terminar = "";
@@ -30,16 +109,19 @@
 
     }
 
-    if (cantidaddevotos[0] > cantidaddevotos[1] && cantidaddevotos[0] > cantidaddevotos[2]) {
+    if (cantidaddevotos[0] > cantidaddevotos[1] && cantidaddevotos[0] > cantidaddevotos[2])
+    {
         Console.WriteLine("El ganador es Patricia Fedellrich con " + cantidaddevotos[0] + " votos");
     }
-    else if (cantidaddevotos[1] > cantidaddevotos[0] && cantidaddevotos[1] > cantidaddevotos[2]) {
+    else if (cantidaddevotos[1] > cantidaddevotos[0] && cantidaddevotos[1] > cantidaddevotos[2])
+    {
         Console.WriteLine("El ganador es Lisandro Fernandez De Kirchner con " + cantidaddevotos[1] + " votos");
     }
-    else { 
+    else
+    {
         Console.WriteLine("El ganador es Javier Matilei con " + cantidaddevotos[2] + " votos");
     }
-   
+
 
 }
 
@@ -83,7 +165,7 @@ void tercerbloqueC()
     int contador = 0;
     foreach (char caracter in palabra)
     {
-      
+
         if (caracter == letra)
         {
             contador++;
@@ -245,7 +327,7 @@ void tercerbloqueH()
 
 void tercerbloqueI()
 {
- 
+
     char[] minusculas = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
     char[] mayusculas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
@@ -258,7 +340,7 @@ void tercerbloqueI()
     {
         for (int i = 0; i < 26; i++)
         {
-           
+
             if (c == minusculas[i] || c == mayusculas[i])
             {
                 contadores[i]++;
@@ -266,7 +348,7 @@ void tercerbloqueI()
         }
     }
 
- 
+
     for (int i = 0; i < 26; i++)
     {
         if (contadores[i] > 0)
@@ -299,14 +381,14 @@ void tercerbloqueJ()
             if (acum > 0)
             {
                 Console.WriteLine("Contraseña incorrecta, por favor, ingrese nuevamente");
-                
+
             }
             else
             {
                 Console.WriteLine("Se agotaron los intentos");
             }
         }
-        
+
     }
 
 
@@ -363,7 +445,7 @@ void tercerbloqueL()
     {
         Console.WriteLine("Bajo peso");
     }
-    else if ( IMC > 18.5 && IMC <= 24.9)
+    else if (IMC > 18.5 && IMC <= 24.9)
     {
         Console.WriteLine("Peso saludable");
     }
