@@ -42,7 +42,7 @@
    
 
 }
-tercerbloqueA();
+
 void tercerbloqueB()
 {
     bool valido = false;
@@ -72,7 +72,7 @@ void tercerbloqueB()
 
 
 }
-tercerbloqueB();
+
 
 void tercerbloqueC()
 {
@@ -97,7 +97,7 @@ void tercerbloqueC()
 
 
 }
-tercerbloqueC();
+
 void tercerbloqueD()
 {
     int dinero = 1000;
@@ -135,7 +135,7 @@ void tercerbloqueD()
         }
     }
 }
-tercerbloqueD();
+
 void tercerbloqueE()
 {
     for (int i = 0; i <= 50; i++)
@@ -152,7 +152,7 @@ void tercerbloqueE()
 
     }
 }
-tercerbloqueE();
+
 void tercerbloqueF()
 {
     char[] abecedario = new char[]
@@ -197,7 +197,7 @@ void tercerbloqueF()
 
 
 }
-tercerbloqueF();
+
 
 void tercerbloqueG()
 {
@@ -226,7 +226,7 @@ void tercerbloqueG()
 
     }
 }
-tercerbloqueG();
+
 
 void tercerbloqueH()
 {
@@ -242,7 +242,7 @@ void tercerbloqueH()
 
 
 }
-tercerbloqueH();
+
 void tercerbloqueI()
 {
  
@@ -277,7 +277,7 @@ void tercerbloqueI()
     }
 
 }
-tercerbloqueI();
+
 void tercerbloqueJ()
 {
     Console.WriteLine("Ingrese nombre de usuario");
@@ -352,3 +352,100 @@ void tercerbloqueK()
 
 
 }
+void tercerbloqueL()
+{
+    Console.WriteLine("Ingrese su peso en kg");
+    double peso = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese su altura en metros");
+    double altura = Convert.ToDouble(Console.ReadLine());
+    double IMC = peso / (altura * altura);
+    if (IMC <= 18.5)
+    {
+        Console.WriteLine("Bajo peso");
+    }
+    else if ( IMC > 18.5 && IMC <= 24.9)
+    {
+        Console.WriteLine("Peso saludable");
+    }
+    else if (IMC > 25 && IMC <= 29.9)
+    {
+        Console.WriteLine("Sobrepeso");
+    }
+    else
+    {
+        Console.WriteLine("Obesidad");
+    }
+}
+
+void tercerbloqueM()
+{
+    Console.WriteLine("Ingrese una palabra");
+    string palabra = Console.ReadLine();
+    string deletreado = "";
+    for (int i = 0; i < palabra.Length; i++)
+    {
+        deletreado += palabra[i];
+        Console.WriteLine(deletreado);
+    }
+
+
+
+
+
+}
+
+
+void tercerbloqueN()
+{
+    char[] vocales = { 'a', 'e', 'i', 'o', 'u' };
+    int indiceVocal = 0;
+
+    Console.WriteLine("Introduce frases. El programa terminará cuando escribas 'agusfortnite2008'.");
+
+    while (true)
+    {
+        Console.Write("Ingresa una frase: ");
+        string entrada = Console.ReadLine();
+
+        if (entrada == "agusfortnite2008")
+        {
+            Console.WriteLine("Programa finalizado.");
+            break;
+        }
+
+        char vocalActual = vocales[indiceVocal];
+
+        char[] caracteres = entrada.ToCharArray();
+
+        for (int i = 0; i < caracteres.Length; i++)
+        {
+            char c = caracteres[i];
+
+
+            char cMinuscula = char.ToLower(c);
+
+            if (cMinuscula == 'a' || cMinuscula == 'e' || cMinuscula == 'i' ||
+                cMinuscula == 'o' || cMinuscula == 'u' || cMinuscula == 'á' ||
+                cMinuscula == 'é' || cMinuscula == 'í' || cMinuscula == 'ó' ||
+                cMinuscula == 'ú')
+            {
+
+                if (char.IsUpper(c))
+                {
+                    caracteres[i] = char.ToUpper(vocalActual);
+                }
+                else
+                {
+                    caracteres[i] = vocalActual;
+                }
+            }
+        }
+
+        string fraseModificada = new string(caracteres);
+
+        Console.WriteLine($"Resultado (con '{vocalActual}'): {fraseModificada}");
+
+        indiceVocal = (indiceVocal + 1) % vocales.Length;
+    }
+}
+
