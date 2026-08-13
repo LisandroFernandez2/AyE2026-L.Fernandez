@@ -25,7 +25,6 @@
             public string estado { get; set; }
 
 
-
             // Constructor
             public Pokemon(string nombre, int nivel, int ps, int ataque, int defensa, int ae, int de, int velocidad, string estado)
             {
@@ -61,9 +60,7 @@
                 this.equipo = equipo;
             }
 
-            //funciones
-
-            //funcion dame nivel recorre la lista de pokemons y suma todos sus niveles
+           
             public int DameNivel()
             {
                 int retorno = 0;
@@ -74,6 +71,8 @@
                 return retorno;
             }
         }
+        //  FUNCIONES
+        // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public static string ComprarPocion(Entrenador entrenador1)
         {
             if (entrenador1.pokedolares < 200)
@@ -95,7 +94,7 @@
             }
             else
             {
-             
+
                 return entrenador2;
             }
 
@@ -133,46 +132,71 @@
 
 
         }
-
-        public static Entrenador AplicarEfectoAlterado(Entrenador entrenador1)
+        public static int EntrenadorConMasNivel(Entrenador entrenador1)
         {
-                for (int i = 0; i < entrenador1.equipo.Length; i++)
-                {
-                    Console.Write(entrenador1.equipo[i].nombre);
-                    Console.WriteLine(" " + entrenador1.equipo[i].estado);
-                }
-                Console.WriteLine("A que pokemon desea aplicarle el efecto alterado");
-                int decision = int.Parse(Console.ReadLine());
-                Console.WriteLine("¿A que estado alterado desea cambiarlo?");
-                string[] EstadosAlterados = new string[6];
-                EstadosAlterados = ["Paralizado", "Quemado", "Envenenado", "Gravemente envenenado", "Dormido", "Congelado"];
-                for (int i = 0; i < EstadosAlterados.Length; i++)
-                {
-                    Console.WriteLine(EstadosAlterados[i]);
-                }
-                 int DesicionAlterado = int.Parse(Console.ReadLine());
-                if (entrenador1.equipo[decision].estado != "Normal")
-                {
-                    Console.WriteLine(entrenador1.equipo[decision].nombre + " " + entrenador1.equipo[decision].ps + " paso de estar " + entrenador1.equipo[decision].estado + " a " + EstadosAlterados[DesicionAlterado]);
-                    entrenador1.equipo[decision].estado = EstadosAlterados[DesicionAlterado];
-                    return entrenador1;
-                }
-                else
-                {
-                    Console.WriteLine(entrenador1.equipo[decision].nombre + " " + entrenador1.equipo[decision].ps + " esta " + entrenador1.equipo[decision].estado);
-                    entrenador1.equipo[decision].estado = EstadosAlterados[DesicionAlterado];
-                    return entrenador1;
-                }
+            int NivelDePokemones = 0;
+            for (int i = 0; i < entrenador1.equipo.Length; i++)
+            {
+                NivelDePokemones += entrenador1.equipo[i].nivel;
+            }
+            return NivelDePokemones;
+        }
+        public static Entrenador CompararNivelDeEntrenadores(Entrenador entrenador1, Entrenador entrenador2)
+        {
+            if (EntrenadorConMasNivel(entrenador1) > EntrenadorConMasNivel(entrenador2))
+            {
+                return entrenador1;
+            }
+            else if (EntrenadorConMasNivel(entrenador2) > EntrenadorConMasNivel(entrenador1))
+            {
+                return entrenador2;
+            }
+            else
+            {
+                Console.WriteLine("Ambos entrenadores tienen el mismo nivel");
+                return entrenador1;
+            }
+
 
         }
+        public static Entrenador AplicarEfectoAlterado(Entrenador entrenador1)
+        {
+            for (int i = 0; i < entrenador1.equipo.Length; i++)
+            {
+                Console.Write(entrenador1.equipo[i].nombre);
+                Console.WriteLine(" " + entrenador1.equipo[i].estado);
+            }
+            Console.WriteLine("A que pokemon desea aplicarle el efecto alterado");
+            int decision = int.Parse(Console.ReadLine());
+            Console.WriteLine("¿A que estado alterado desea cambiarlo?");
+            string[] EstadosAlterados = new string[6];
+            EstadosAlterados = ["Paralizado", "Quemado", "Envenenado", "Gravemente envenenado", "Dormido", "Congelado"];
+            for (int i = 0; i < EstadosAlterados.Length; i++)
+            {
+                Console.WriteLine(EstadosAlterados[i]);
+            }
+            int DesicionAlterado = int.Parse(Console.ReadLine());
+            if (entrenador1.equipo[decision].estado != "Normal")
+            {
+                Console.WriteLine(entrenador1.equipo[decision].nombre + " " + entrenador1.equipo[decision].ps + " paso de estar " + entrenador1.equipo[decision].estado + " a " + EstadosAlterados[DesicionAlterado]);
+                entrenador1.equipo[decision].estado = EstadosAlterados[DesicionAlterado];
+                return entrenador1;
+            }
+            else
+            {
+                Console.WriteLine(entrenador1.equipo[decision].nombre + " " + entrenador1.equipo[decision].ps + " esta " + entrenador1.equipo[decision].estado);
+                entrenador1.equipo[decision].estado = EstadosAlterados[DesicionAlterado];
+                return entrenador1;
+            }
 
+        }
         public static int DeterminarSiPuedeControlar(Entrenador entrenador1)
         {
             int NivelAlQuePuedeControlar = (entrenador1.medallas.Length * 10) + 20;
             int CantidadQuePuedeControlar = 0;
             if (entrenador1.medallas.Length > 0 && NivelAlQuePuedeControlar <= 99)
             {
-                for ( int i = 0; i < entrenador1.equipo.Length; i++)
+                for (int i = 0; i < entrenador1.equipo.Length; i++)
                 {
                     if (entrenador1.equipo[i].nivel <= NivelAlQuePuedeControlar)
                     {
@@ -184,11 +208,47 @@
             }
             else if (entrenador1.medallas.Length <= 0)
             {
-               return entrenador1.equipo.Length - CantidadQuePuedeControlar;
+                return entrenador1.equipo.Length - CantidadQuePuedeControlar;
             }
             return entrenador1.equipo.Length - CantidadQuePuedeControlar;
         }
-
+        public static int Peligrosidad(Pokemon pokemon)
+        {
+            int Peligrosidad = (pokemon.ataque + pokemon.ae + pokemon.velocidad) / 3;
+            return Peligrosidad;
+        }
+        public static Entrenador EntrenadorConMasPeligrosidad60(Entrenador entrenador1, Entrenador entrenador2)
+        {
+            int PeligrosidadEntrenador1 = 0;
+            int PeligrosidadEntrenador2 = 0;
+            for (int i = 0; i < entrenador1.equipo.Length; i++)
+            {
+                if (Peligrosidad(entrenador1.equipo[i]) > 60)
+                {
+                    PeligrosidadEntrenador1 += 1;
+                }
+            }
+            for (int i = 0; i < entrenador2.equipo.Length; i++)
+            {
+                if (Peligrosidad(entrenador2.equipo[i]) > 60)
+                {
+                    PeligrosidadEntrenador2 += 1;
+                }
+            }
+            if (PeligrosidadEntrenador1 > PeligrosidadEntrenador2)
+            {
+                return entrenador1;
+            }
+            else if (PeligrosidadEntrenador2 > PeligrosidadEntrenador1)
+            {
+                return entrenador2;
+            }
+            else
+            {
+                Console.WriteLine("Ambos tienen la misma cantidad de pokemones con mas de 60 de peligrosidad");
+                return entrenador1;
+            }
+        }
         public static string DeterminarSiPuedeControlarPokemonIndividual(Entrenador entrenador1)
         {
             int NivelAlQuePuedeControlar = (entrenador1.medallas.Length * 10) + 20;
@@ -209,33 +269,37 @@
 
 
         }
-                static void Main(string[] args)
-                {
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        static void Main(string[] args)
+        {
 
-                    // creo una lista de pokemons
-                    Pokemon[] equipo1 = new Pokemon[]
-                    {
+            // LISTAS DE POKEMONS
+            // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Pokemon[] equipo1 = new Pokemon[]
+            {
                         new Pokemon("Pikachu", 150, 150, 90, 55, 110, 50, 90, "Normal"),
                         new Pokemon("Charizard", 55, 180, 84, 78, 109, 85, 100, "Alterado"),
                         new Pokemon("Blastoise", 252, 175, 83, 100, 85, 105, 78, "Normal"),
                         new Pokemon("Venusaur", 351, 170, 82, 83, 100, 100, 80, "Alterado"),
                         new Pokemon("Snorlax", 48, 160, 110, 65, 55, 55, 45, "Normal"),
                         new Pokemon("Gengar", 120, 130, 65, 60, 130, 110, 110, "Normal")
-                    };
+            };
 
-                    // creo otra lista de pokemons
-                    Pokemon[] equipo2 = new Pokemon[]
-                     {
+            
+            Pokemon[] equipo2 = new Pokemon[]
+             {
                          new Pokemon("Dragonite", 52, 160, 134, 95, 70, 100, 80, "Normal"),
                          new Pokemon("Alakazam", 50, 140, 50, 70, 135, 115, 120, "Normal"),
                          new Pokemon("Gyarados", 49, 200, 130, 60, 95, 85, 65, "Normal"),
                          new Pokemon("Rhydon", 53, 155, 110, 96, 83, 85, 45, "Normal"),
                          new Pokemon("Jolteon", 50, 135, 110, 100, 50, 70, 130, "Normal"),
                          new Pokemon("Starmie", 51, 145, 105, 75, 100, 90, 115, "Normal")
-                     };
-                    // medallas 1 y 2
-                    string[] medallas = new string[8]
-                    {
+             };
+            // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // MEDALLAS
+            // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            string[] medallas = new string[8]
+            {
                         "Medalla Roca",
                         "Medalla Cascada",
                         "Medalla Trueno",
@@ -244,45 +308,49 @@
                         "Medalla Pantano",
                         "Medalla Volcán",
                         "Medalla Tierra"
-                    };
-                    string[] medallas2 = new string[4]
-                 {
+            };
+            string[] medallas2 = new string[4]
+         {
                      "Medalla Roca",
                      "Medalla Cascada",
                      "Medalla Trueno",
                      "Medalla Arcoíris",
-                 };
+         };
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Entrenador entrenador1 = new Entrenador("Ash", 500, medallas2, equipo1);
+            Entrenador entrenador2 = new Entrenador("Pepe", 100, medallas, equipo2);
 
-                    Entrenador entrenador1 = new Entrenador("Ash", 500, medallas2, equipo1);
-                    Entrenador entrenador2 = new Entrenador("Pepe", 100, medallas, equipo2);
 
-
-                    // COMPARACION DE NIVEL
-                    if (entrenador1.DameNivel() > entrenador2.DameNivel())
-                    {
-                        Console.WriteLine(entrenador1.nombre + " Tiene mas nivel que: " + entrenador2.nombre);
-                    }
-                    else if (entrenador2.DameNivel() > entrenador1.DameNivel())
-                    {
-                        Console.WriteLine(entrenador2.nombre + " Tiene mas nivel que: " + entrenador1.nombre);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Tienen el mismo nivel");
-                    }
-                    // funcion de pocion
-                    Console.WriteLine(ComprarPocion(entrenador1));
-                    Console.WriteLine(ComprarPocion(entrenador2));
-                    // funcion de medallas
-                    Entrenador EntrenadorConMasMedallas = CompararMedallas(entrenador1, entrenador2);
-                    Console.WriteLine("El entrenador con mas medallas es " + EntrenadorConMasMedallas.nombre + " con una cantidad de " + EntrenadorConMasMedallas.medallas.Length);
-                    // funcion de pokemones alterados
-                    Entrenador EntrenadorConMasAlterados = EntrenadorConMasPokemonsAlterados(entrenador1, entrenador2);
-                    Console.WriteLine("El entrenador con mas pokemones alterados es " + EntrenadorConMasAlterados.nombre);
-                    // FUNCION PARA ELEGIR A QUE POKEMON APLICARLE EL ESTADO ALTERADO
-                    AplicarEfectoAlterado(entrenador1);
-                    //FUNCION PARA DETERMINAR A QUE POKEMONES PUEDE CONTROLAR EL ENTRENADOR
-                    Console.WriteLine(DeterminarSiPuedeControlarPokemonIndividual(entrenador1));
-                }
+            // COMPARACION DE NIVEL
+            if (entrenador1.DameNivel() > entrenador2.DameNivel())
+            {
+                Console.WriteLine(entrenador1.nombre + " Tiene mas nivel que: " + entrenador2.nombre);
+            }
+            else if (entrenador2.DameNivel() > entrenador1.DameNivel())
+            {
+                Console.WriteLine(entrenador2.nombre + " Tiene mas nivel que: " + entrenador1.nombre);
+            }
+            else
+            {
+                Console.WriteLine("Tienen el mismo nivel");
+            }
+            // FUNCION DE POCION
+            Console.WriteLine(ComprarPocion(entrenador1));
+            Console.WriteLine(ComprarPocion(entrenador2));
+            // FUNCION DE MEDALLAS
+            Entrenador EntrenadorConMasMedallas = CompararMedallas(entrenador1, entrenador2);
+            Console.WriteLine("El entrenador con mas medallas es " + EntrenadorConMasMedallas.nombre + " con una cantidad de " + EntrenadorConMasMedallas.medallas.Length);
+            // FUNCION DE POKEMONES ALTERADOS
+            Entrenador EntrenadorConMasAlterados = EntrenadorConMasPokemonsAlterados(entrenador1, entrenador2);
+            Console.WriteLine("El entrenador con mas pokemones alterados es " + EntrenadorConMasAlterados.nombre);
+            // FUNCION PARA ELEGIR A QUE POKEMON APLICARLE EL ESTADO ALTERADO
+            AplicarEfectoAlterado(entrenador1);
+            //FUNCION PARA DETERMINAR A QUE POKEMONES PUEDE CONTROLAR EL ENTRENADOR
+            Console.WriteLine(DeterminarSiPuedeControlarPokemonIndividual(entrenador1));
+            // FUNCION PARA DETERMINAR CUAL TIENE MAS NIVEL
+            Console.WriteLine(CompararNivelDeEntrenadores(entrenador1, entrenador2).nombre);
+            // FUNCION PARA VER QUIEN TIENE MAS PELIGROSIDAD
+            Console.WriteLine(EntrenadorConMasPeligrosidad60(entrenador1, entrenador2).nombre);
+        }
     }
 }
