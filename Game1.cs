@@ -9,8 +9,35 @@ namespace Project1
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        Texture2D miTextura;
-        Sprite miSprite;
+        Texture2D TexturaFrenteBulbasur;
+        Sprite SpriteFrenteBulbasur;
+        Texture2D TexturaDetrasBulbasur;
+        Sprite SpriteDetrasBulbasur;
+
+        Texture2D TexturaFrentePikachu;
+        Sprite SpriteFrentePikachu;
+        Texture2D TexturaDetrasPikachu;
+        Sprite SpriteDetrasPikachu;
+
+        Texture2D TexturaFrenteCharmander;
+        Sprite SpriteFrenteCharmander;
+        Texture2D TexturaDetrasCharmander;
+        Sprite SpriteDetrasCharmander;
+
+        Texture2D TexturaFrenteCharizard;
+        Sprite SpriteFrenteCharizard;
+        Texture2D TexturaDetrasCharizard;
+        Sprite SpriteDetrasCharizard;
+
+        Texture2D TexturaFrenteSquirtle;
+        Sprite SpriteFrenteSquirtle;
+        Texture2D TexturaDetrasSquirtle;
+        Sprite SpriteDetrasSquirtle;
+
+        Texture2D TexturaFrenteMewtwo;
+        Sprite SpriteFrenteMewtwo;
+        Texture2D TexturaDetrasMewtwo;
+        Sprite SpriteDetrasMewtwo;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -28,10 +55,35 @@ namespace Project1
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            TexturaFrenteBulbasur = Content.Load<Texture2D>("Bulbasurfrente");
+            SpriteFrenteBulbasur = new Sprite(TexturaFrenteBulbasur, Vector2.Zero);
+            TexturaDetrasBulbasur = Content.Load<Texture2D>("Bulbasurdetras");
+            SpriteDetrasBulbasur = new Sprite(TexturaDetrasBulbasur, Vector2.Zero);
 
-            miTextura = Content.Load<Texture2D>("boca");
-            miSprite = new Sprite(miTextura, Vector2.Zero);
+            TexturaFrentePikachu = Content.Load<Texture2D>("Pikachufrente");
+            SpriteFrentePikachu = new Sprite(TexturaFrentePikachu, Vector2.Zero);
+            TexturaDetrasPikachu = Content.Load<Texture2D>("Pikachudetras");
+            SpriteDetrasPikachu = new Sprite(TexturaDetrasPikachu, Vector2.Zero);
 
+            TexturaFrenteCharmander = Content.Load<Texture2D>("Charmanderfrente");
+            SpriteFrenteCharmander = new Sprite(TexturaFrenteCharmander, Vector2.Zero);
+            TexturaDetrasCharmander = Content.Load<Texture2D>("Charmanderdetras");
+            SpriteDetrasCharmander = new Sprite(TexturaDetrasCharmander, Vector2.Zero);
+
+            TexturaFrenteCharizard = Content.Load<Texture2D>("Charizardfrente");
+            SpriteFrenteCharizard = new Sprite(TexturaFrenteCharizard, Vector2.Zero);
+            TexturaDetrasCharizard = Content.Load<Texture2D>("CharizardDetras");
+            SpriteDetrasCharizard = new Sprite(TexturaDetrasCharizard, Vector2.Zero);
+
+            TexturaFrenteSquirtle = Content.Load<Texture2D>("squirtlefrente");
+            SpriteFrenteSquirtle = new Sprite(TexturaFrenteSquirtle, Vector2.Zero);
+            TexturaDetrasSquirtle = Content.Load<Texture2D>("squirtledetras");
+            SpriteDetrasSquirtle = new Sprite(TexturaDetrasSquirtle, Vector2.Zero);
+
+            TexturaFrenteMewtwo = Content.Load<Texture2D>("mewtwofrente");
+            SpriteFrenteMewtwo = new Sprite(TexturaFrenteMewtwo, Vector2.Zero);
+            TexturaDetrasMewtwo = Content.Load<Texture2D>("mewtwodetras");
+            SpriteDetrasMewtwo = new Sprite(TexturaDetrasMewtwo, Vector2.Zero);
             // TODO: use this.Content to load your game content here
         }
 
@@ -48,11 +100,30 @@ namespace Project1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            _spriteBatch.Draw(miSprite.texture, miSprite.position, Color.White);
+            Rectangle MostrarFrentePokemon;
+            Rectangle MostrarDetrasPokemon;
+            int MoverPosicion = 100;
+            Pokemon[] equipo1 = new Pokemon[]
+           {
+                new Pokemon("Bulbasur",10,100,101,23,23,23,34,243,SpriteFrenteBulbasur,SpriteDetrasBulbasur),
+                new Pokemon("Pikachu",10,100,101,23,23,23,24,254,SpriteFrentePikachu,SpriteDetrasPikachu),
+                new Pokemon("Charmander",10,100,101,23,23,23,24,256,SpriteFrenteCharmander,SpriteDetrasCharmander),
+                new Pokemon("Charizard",10,100,101,23,23,23,24,234,SpriteFrenteCharizard,SpriteDetrasCharizard),
+                new Pokemon("Squirtle",10,100,121,12,23,43,23,23,SpriteFrenteSquirtle,SpriteDetrasSquirtle),
+                new Pokemon("Mewtwo",10,101,101,101,101,101,101,101,SpriteFrenteMewtwo,SpriteDetrasMewtwo)
+           };
+            Entrenador Ash = new Entrenador("Ash", 500, equipo1);
+            for (int i = 0; i < 6; i++)
+            {
+
+                MostrarFrentePokemon = new Rectangle(MoverPosicion, 100, 200, 200);
+                MostrarDetrasPokemon = new Rectangle(MoverPosicion, 200, 200, 200);
+                MoverPosicion += 100;
+                _spriteBatch.Draw(Ash.equipo[i].frente.texture, MostrarFrentePokemon, Color.White);
+                _spriteBatch.Draw(Ash.equipo[i].detras.texture, MostrarDetrasPokemon, Color.White);
+
+            }
             _spriteBatch.End();
 
             base.Draw(gameTime);
