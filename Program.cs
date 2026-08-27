@@ -52,21 +52,62 @@
             }
 
             Stack<string> TextoRandom = new Stack<string>();
-            TextoRandom.Push("(a + b)");
-            TextoRandom.Push("({a + b)}");
-            TextoRandom.Push("(( a + b ))");
-            bool VerificarTexto(Stack<string> Ejemplo)
+            Console.WriteLine("Ingrese una palabra con delimitadores");
+            string Palabra = Console.ReadLine();
+            TextoRandom.Push(Palabra);
+            bool VerificarTexto(string ejemplo)
             {
-                foreach (char c in Ejemplo)
+                bool parentesis = false;
+                bool parentesisbienpuesto = false;
+                bool corchete = false;
+                bool corchetebienpuesto = false;
+                bool llaves = false;
+                bool llavesbienpuesto = false;
+                foreach (char c in ejemplo)
                 {
-                    Console.WriteLine(c);
+                    if (c == '(')
+                    {
+                        parentesis = true;
+                    }
+                    if (c == ')' && parentesis == true)
+                    {
+                        parentesisbienpuesto = true;
+                    }
                 }
-                return true;
-
+                foreach (char c in ejemplo)
+                {
+                    if (c == '[')
+                    {
+                        corchete = true;
+                    }
+                    if (c == ']' && corchete == true)
+                    {
+                        corchetebienpuesto = true;
+                    }
+                }
+                foreach (char c in ejemplo)
+                {
+                    if (c == '{')
+                    {
+                       llaves = true;
+                    }
+                    if (c == '}' && llaves == true)
+                    {
+                        llavesbienpuesto = true;
+                    }
+                }
+                if (llavesbienpuesto == true && corchetebienpuesto == true && parentesisbienpuesto == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
 
             }
-            VerificarTexto(TextoRandom);
+            Console.WriteLine(VerificarTexto(TextoRandom.Peek()));
         }
     }
 }
