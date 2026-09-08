@@ -4,16 +4,6 @@
     {
         static void Main(string[] args)
         {
-
-            Stack<Perro> Perros = new Stack<Perro>();
-
-            Perro primerPerro = new Perro(18, "pepe", "Border Collie");
-
-            Perros.Push(primerPerro);
-
-            Perro segundoPerro = new Perro(15, "lisandro", "callejero");
-
-            Perros.Push(segundoPerro);
             Stack<char> PalabraInvertida = new Stack<char>();
             Console.WriteLine("Ingrese una palabra");
             string PalabraIngresada = Console.ReadLine();
