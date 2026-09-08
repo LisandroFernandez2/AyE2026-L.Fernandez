@@ -50,61 +50,39 @@
                     decision = "N";
                 }
             }
+                    string expresionValida = "{ [ ( a + b ) ] }";
+                    string expresionInvalida = "{ [ ( a + b } ] )";
 
-            Stack<string> TextoRandom = new Stack<string>();
-            Console.WriteLine("Ingrese una palabra con delimitadores");
-            string Palabra = Console.ReadLine();
-            TextoRandom.Push(Palabra);
-            bool VerificarTexto(string ejemplo)
-            {
-                bool parentesis = false;
-                bool parentesisbienpuesto = false;
-                bool corchete = false;
-                bool corchetebienpuesto = false;
-                bool llaves = false;
-                bool llavesbienpuesto = false;
-                foreach (char c in ejemplo)
-                {
-                    if (c == '(')
-                    {
-                        parentesis = true;
-                    }
-                    if (c == ')' && parentesis == true)
-                    {
-                        parentesisbienpuesto = true;
-                    }
-                }
-                foreach (char c in ejemplo)
-                {
-                    if (c == '[')
-                    {
-                        corchete = true;
-                    }
-                    if (c == ']' && corchete == true)
-                    {
-                        corchetebienpuesto = true;
-                    }
-                }
-                foreach (char c in ejemplo)
-                {
-                    if (c == '{')
-                    {
-                       llaves = true;
-                    }
-                    if (c == '}' && llaves == true)
-                    {
-                        llavesbienpuesto = true;
-                    }
-                }
-                if (llavesbienpuesto == true && corchetebienpuesto == true && parentesisbienpuesto == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                    Console.WriteLine($"Prueba 1: {VerificarDelimitadores(expresionValida)}");  
+                    Console.WriteLine($"Prueba 2: {VerificarDelimitadores(expresionInvalida)}"); 
 
+                    bool VerificarDelimitadores(string expresion)
+                    {
+                    Stack<char> pila = new Stack<char>();
+
+                    foreach (char caracter in expresion)
+                    {
+                        if (caracter == '(' || caracter == '[' || caracter == '{')
+                        {
+                            pila.Push(caracter);
+                        }
+                        else if (caracter == ')' || caracter == ']' || caracter == '}')
+                        {
+                            if (pila.Count == 0) return false;
+                
+                            char aperturaTop = pila.Pop();
+                
+                            switch (caracter)
+                            {
+                                case ')': if (aperturaTop != '(') return false; break;
+                                case ']': if (aperturaTop != '[') return false; break;
+                                case '}': if (aperturaTop != '{') return false; break;
+                            }
+                        }
+                    }
+                
+                    return pila.Count == 0;
+                }
 
             }
             Console.WriteLine(VerificarTexto(TextoRandom.Peek()));
