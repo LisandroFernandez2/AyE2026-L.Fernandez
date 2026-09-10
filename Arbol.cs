@@ -110,18 +110,5 @@ namespace ConsoleApp1
 
 
         }
-        public int ObtenerAltura(Nodo nodoActual)
-        {
-            if (nodoActual == null)
-            {
-                return 0;
-            }
-            int nodoactual = ObtenerCantidadNodos(nodoActual.Izquierdo);
-
-
-            return 1 + nodoactual;
-
-
-        }
     }
 }
