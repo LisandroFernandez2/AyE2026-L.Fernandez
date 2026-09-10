@@ -17,7 +17,6 @@
             Console.WriteLine(arbolitox.ObtenerMinimo(arbolitox.Raiz));
             Console.WriteLine(arbolitox.ObtenerMaximo(arbolitox.Raiz));
             Console.WriteLine(arbolitox.ObtenerCantidadNodos(arbolitox.Raiz));
-            Console.WriteLine("La altura es " + arbolitox.ObtenerAltura(arbolitox.Raiz));
         }
     }
 }
