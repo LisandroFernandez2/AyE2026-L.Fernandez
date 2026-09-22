@@ -16,9 +16,9 @@ namespace ConsoleApp1
             this.y = y;
             this.x = x;
         }
-       public void Mostrar()
-       {
+        public void Mostrar()
+        {
             Console.WriteLine(x + " " + y);
-       }
+        }
     }
 }
