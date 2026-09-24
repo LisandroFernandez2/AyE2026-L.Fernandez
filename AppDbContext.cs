@@ -13,7 +13,7 @@ namespace ConsoleApp1
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=localhost;port=3307;Database=pokedex;Uid=root;pwd=;";
+            string connectionString = "Server=localhost;port=3306;Database=pokedex;Uid=root;pwd=;";
             var serverVersion = ServerVersion.AutoDetect(connectionString);
             optionsBuilder.UseMySql(connectionString, serverVersion);
         }

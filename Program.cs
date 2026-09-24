@@ -9,14 +9,15 @@ namespace ConsoleApp1
         {
             using var pokedex = new AppDbContext();
             int decision = 0;
-            while (decision != 5)
+            while (decision != 6)
             {
                 Console.WriteLine("¿Que desea hacer?");
                 Console.WriteLine("1- Agregar");
                 Console.WriteLine("2- Eliminar");
                 Console.WriteLine("3- Actualizar");
                 Console.WriteLine("4- Consultar");
-                Console.WriteLine("5- Finalizar Programa");
+                Console.WriteLine("5- Buscar en el arbol");
+                Console.WriteLine("6- Finalizar programa");
                 decision = int.Parse(Console.ReadLine());
                 switch (decision)
                 {
@@ -92,7 +93,7 @@ namespace ConsoleApp1
                         {
                             modificar = int.Parse(Console.ReadLine());
                         }
-                            var datoBuscado2 = await pokedex.pokemon.FindAsync(id2);
+                        var datoBuscado2 = await pokedex.pokemon.FindAsync(id2);
                         if (datoBuscado2 != null)
                         {
                             switch (decision2)
@@ -131,6 +132,67 @@ namespace ConsoleApp1
 
                             await pokedex.SaveChangesAsync();
                         }
+                        break;
+                    case 4:
+                        var todos = await pokedex.pokemon.ToListAsync();
+                        foreach (var e in todos)
+                        {
+                            Console.WriteLine(" ID: "+ e.Id);
+                            Console.Write(" NOMBRE: " + e.nombre);
+                            Console.Write(" TIPO1: " + e.tipo_1);
+                            Console.Write(" TIPO2: " + e.tipo_2);
+                            Console.Write(" HP: " + e.hp);
+                            Console.Write(" ATAQUE: " + e.ataque);
+                            Console.Write(" DEFENSA: " + e.defensa);
+                            Console.Write(" ATAQUE ESPECIAL: " + e.ataque_especial);
+                            Console.Write(" DEFENSA ESPECIAL: " + e.defensa_especial);
+                            Console.Write(" VELOCIDAD " + e.velocidad);
+                            Console.Write(" NIVEL: " + e.nivel);
+                            Pokemon pokemon = new Pokemon();
+                            pokemon = e;
+                        }
+                        break;
+                    case 5:
+                        var todos2 = await pokedex.pokemon.ToListAsync();
+                        Arbol Arbolito = new Arbol();
+
+                        foreach (var e in todos2)
+                        {
+                            
+                            pokemones nuevoPokemon = new pokemones();
+                            nuevoPokemon.id = e.Id; 
+                            nuevoPokemon.nombre = e.nombre;
+                            nuevoPokemon.tipo_1 = e.tipo_1;
+                            nuevoPokemon.tipo_2 = e.tipo_2;
+                            nuevoPokemon.hp = e.hp;
+                            nuevoPokemon.ataque = e.ataque;
+                            nuevoPokemon.defensa = e.defensa;
+                            nuevoPokemon.ataque_especial = e.ataque_especial;
+                            nuevoPokemon.defensa_especial = e.defensa_especial;
+                            nuevoPokemon.velocidad = e.velocidad;
+                            nuevoPokemon.nivel = e.nivel;
+
+                            
+                            Arbolito.Insertar(nuevoPokemon);
+                        }
+
+                        Console.WriteLine("Ingresa el id del pokemon que desea buscar");
+                        int Buscar = int.Parse(Console.ReadLine());
+                        var encontrado = Arbolito.buscar(Buscar);
+                        if (encontrado != null)
+                        {
+                            Console.WriteLine($"Encontrado: {encontrado}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Pokémon con ID 5 no encontrado en el árbol.");
+                        }
+
+                        
+
+                        break;
+                    default:
+                        Console.WriteLine("Ingrese un numero valido");
                         break;
                 }
 

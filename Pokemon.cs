@@ -10,9 +10,9 @@ namespace ConsoleApp1
     internal class Pokemon
     {
         public int Id { get; set; }
-        public string nombre { get; set; }
-        public string tipo_1 { get; set; }
-        public string tipo_2 { get; set; }
+        public string? nombre { get; set; }
+        public string? tipo_1 { get; set; }
+        public string? tipo_2 { get; set; }
         public int hp { get; set; }
         public int ataque { get; set; }
         public int defensa { get; set; }

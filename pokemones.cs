@@ -14,9 +14,9 @@ namespace ConsoleApp1
         public int id { get; set; }
 
 
-        public string nombre { get; set; }
-        public string tipo_1 { get; set; }
-        public string tipo_2 { get; set; }
+        public string? nombre { get; set; }
+        public string? tipo_1 { get; set; }
+        public string? tipo_2 { get; set; }
         public int hp { get; set; }
         public int ataque { get; set; }
         public int defensa { get; set; }
@@ -26,7 +26,7 @@ namespace ConsoleApp1
         public int nivel { get; set; }
 
 
-        public Pokemon izquierdo { get; set; }
-        public Pokemon derecho { get; set; }
+        public pokemones? izquierdo { get; set; }
+        public pokemones? derecho { get; set; }
     }
 }
