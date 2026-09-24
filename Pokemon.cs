@@ -7,8 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp1
 {
-    public class Pokemon
+    internal class Pokemon
     {
+        public int Id { get; set; }
         public string nombre { get; set; }
         public string tipo_1 { get; set; }
         public string tipo_2 { get; set; }
@@ -21,20 +22,6 @@ namespace ConsoleApp1
         public int nivel { get; set; }
 
 
-        public Pokemon(string nombre, string tipo_1, string tipo_2, int hp, int ataque,
-                       int defensa, int ataque_especial, int defensa_special, int velocidad, int nivel)
-        {
-            this.nombre = nombre;
-            this.tipo_1 = tipo_1;
-            this.tipo_2 = tipo_2;
-            this.hp = hp;
-            this.ataque = ataque;
-            this.defensa = defensa;
-            this.ataque_especial = ataque_especial;
-            this.defensa_especial = defensa_special;
-            this.velocidad = velocidad;
-            this.nivel = nivel;
-        }
 
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Arbol
+    internal class Arbol
     {
-        
         public Pokemon Raiz { get; set; }
 
         public Arbol()

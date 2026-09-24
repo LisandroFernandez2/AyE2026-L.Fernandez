@@ -22,42 +22,117 @@ namespace ConsoleApp1
                 {
                     case 1:
                         Console.WriteLine("Ingrese el nombre");
-                        string nombre = Console.ReadLine();
+                        string nombreing = Console.ReadLine();
                         Console.WriteLine("Ingrese el tipo 1");
-                        string tipo_1 = Console.ReadLine();
+                        string tipo_1ing = Console.ReadLine();
                         Console.WriteLine("Ingrese el tipo 2");
-                        string tipo_2 = Console.ReadLine();
+                        string tipo_2ing = Console.ReadLine();
                         Console.WriteLine("Ingrese el hp");
-                        int hp = int.Parse(Console.ReadLine());
+                        int hping = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese el ataque");
-                        int ataque = int.Parse(Console.ReadLine());
+                        int ataqueing = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese la defensa");
-                        int defensa = int.Parse(Console.ReadLine());
+                        int defensaing = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese el ataque especial");
-                        int ataque_especial = int.Parse(Console.ReadLine());
+                        int ataque_especialing = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese la defensa especial");
-                        int defensa_especial = int.Parse(Console.ReadLine());
+                        int defensa_especialing = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese la velocidad");
-                        int velocidad = int.Parse(Console.ReadLine());
+                        int velocidading = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese el nivel");
-                        int nivel = int.Parse(Console.ReadLine());
-                        var nuevo = new Pokemon
-                        (
-                            nombre = nombre,
-                            tipo_1 = tipo_1,
-                            tipo_2 = tipo_2,
-                            hp = hp,
-                            ataque = ataque,
-                            defensa = defensa,
-                            ataque_especial = ataque_especial,
-                            defensa_especial = defensa_especial,
-                            velocidad = velocidad,
-                            nivel = nivel 
-                        );
-                        pokedex.pokedex.Add(nuevo);
+                        int niveling = int.Parse(Console.ReadLine());
+                        var nuevoing = new Pokemon
+                        {
+                            nombre = nombreing,
+                            tipo_1 = tipo_1ing,
+                            tipo_2 = tipo_2ing,
+                            hp = hping,
+                            ataque = ataqueing,
+                            defensa = defensaing,
+                            ataque_especial = ataque_especialing,
+                            defensa_especial = defensa_especialing,
+                            velocidad = velocidading,
+                            nivel = niveling
+                        };
+                        pokedex.pokemon.Add(nuevoing);
+                        await pokedex.SaveChangesAsync();
+                        break;
+                    case 2:
+                        Console.WriteLine("Ingrese el id del dato que desea eliminar");
+                        int id = int.Parse(Console.ReadLine());
+                        var datoBuscado = await pokedex.pokemon.FindAsync(id);
+                        if (datoBuscado != null)
+                        {
+                            pokedex.pokemon.Remove(datoBuscado);
+                            await pokedex.SaveChangesAsync();
+                        }
+                        break;
+                    case 3:
+                        int modificar = 0;
+                        string modificars = "";
+                        Console.WriteLine("Ingrese el id del dato que desea modificar");
+                        int id2 = int.Parse(Console.ReadLine());
+                        Console.WriteLine("¿Que desea modificar?");
+                        Console.WriteLine("1- Nombre");
+                        Console.WriteLine("2- Tipo 1");
+                        Console.WriteLine("3- Tipo 2");
+                        Console.WriteLine("4- HP");
+                        Console.WriteLine("5- Ataque");
+                        Console.WriteLine("6- Defensa");
+                        Console.WriteLine("7- Ataque especial");
+                        Console.WriteLine("8- Defensa especial");
+                        Console.WriteLine("9- Velocidad");
+                        Console.WriteLine("10- Nivel");
+                        int decision2 = int.Parse(Console.ReadLine());
+                        if (decision2 == 1 || decision2 == 2 || decision2 == 3)
+                        {
+                            modificars = Console.ReadLine();
+                        }
+                        else
+                        {
+                            modificar = int.Parse(Console.ReadLine());
+                        }
+                            var datoBuscado2 = await pokedex.pokemon.FindAsync(id2);
+                        if (datoBuscado2 != null)
+                        {
+                            switch (decision2)
+                            {
+                                case 1:
+                                    datoBuscado2.nombre = modificars;
+                                    break;
+                                case 2:
+                                    datoBuscado2.tipo_1 = modificars;
+                                    break;
+                                case 3:
+                                    datoBuscado2.tipo_2 = modificars;
+                                    break;
+                                case 4:
+                                    datoBuscado2.hp = modificar;
+                                    break;
+                                case 5:
+                                    datoBuscado2.ataque = modificar;
+                                    break;
+                                case 6:
+                                    datoBuscado2.defensa = modificar;
+                                    break;
+                                case 7:
+                                    datoBuscado2.ataque_especial = modificar;
+                                    break;
+                                case 8:
+                                    datoBuscado2.defensa_especial = modificar;
+                                    break;
+                                case 9:
+                                    datoBuscado2.velocidad = modificar;
+                                    break;
+                                case 10:
+                                    datoBuscado2.nivel = modificar;
+                                    break;
+                            }
+
+                            await pokedex.SaveChangesAsync();
+                        }
                         break;
                 }
-
 
             }
         }

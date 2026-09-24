@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp1
 {
-    public class pokemones
+    internal class pokemones
     {
-        
         public int id { get; set; }
 
-        
+
         public string nombre { get; set; }
         public string tipo_1 { get; set; }
         public string tipo_2 { get; set; }
@@ -24,7 +25,7 @@ namespace ConsoleApp1
         public int velocidad { get; set; }
         public int nivel { get; set; }
 
-        
+
         public Pokemon izquierdo { get; set; }
         public Pokemon derecho { get; set; }
     }
