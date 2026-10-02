@@ -50,25 +50,41 @@
             {
                 int IzquierdoInicio = numeros[0];
                 int DerechoFinal = numeros[numeros.Length - 1];
-                bool FueEncontrado = false;
-                while (FueEncontrado = false)
-                {
+                bool FueEncontrado = true;
+                while (FueEncontrado)
+                {// Posicioncentral toma un nuevo valor en cada vuelta
                     int PosicionCentral = (IzquierdoInicio + DerechoFinal) / 2;
+                    if (IzquierdoInicio > DerechoFinal || NumeroBuscado > DerechoFinal || NumeroBuscado < IzquierdoInicio)
+                    {
+                        // si el numero ingresado es mayor que el final de la lista u o menor, automaticamente rompe el while y retorna que no encontro el numero
+                        // ya que por logica, no puede ser mayor que el numero final de la lista ni menor al numero inicial (siempre la lista esta ordenada)
+                        FueEncontrado = false;
+                    }
                     if (NumeroBuscado < numeros[PosicionCentral])
                     {
+                       // Si el numero es menor, el rango a encontrar pasa a ser el inicio de la lista (izquierda vale lo mismo)
+                       // y derecha vale el medio - 1 (ya que sabemos que el numero buscado no es el mismo que el del medio)
                         DerechoFinal = PosicionCentral - 1;
                     }
-                    else if(NumeroBuscado > numeros[PosicionCentral])
+                    else if (NumeroBuscado > numeros[PosicionCentral])
                     {
+                        // Si el numero es mayor, el rango a encontrar pasa a ser izquierda
+                        // (que ahora vale el medio mas uno, porque sabemos que el numero buscado no es el mismo que el del medio)
+                        // y derecha vale lo mismo.
                         IzquierdoInicio = PosicionCentral + 1;
                     }
-                    if (NumeroBuscado == numeros[PosicionCentral])
+                    else if (NumeroBuscado == numeros[PosicionCentral])
                     {
-                        return "Su numero se encuentra en la posicion " + numeros[PosicionCentral];
+                       // Si encuentra el numero, retorna la posicion junto a un texto (para que quede mejor)
+                        return "Su numero se encuentra en la posicion " + PosicionCentral;
                     }
 
+
                 }
+               // Si se rompio el while, entonces significa que no encontro el numero
                 return "Su numero no existe en la lista";
+
+            }
 
             }
         }
