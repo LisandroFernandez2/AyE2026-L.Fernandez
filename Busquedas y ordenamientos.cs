@@ -12,18 +12,21 @@
                     31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
                     41, 42, 43, 44, 45, 46, 47, 48, 49, 50
             };
+            int izquierda = VectorNumeros[0];
+            int derecha = VectorNumeros[VectorNumeros.Length - 1];
             Console.WriteLine("Ingrese el numero que quiere buscar");
             int buscar = int.Parse(Console.ReadLine());
             Console.WriteLine(Busqueda_secuencial(VectorNumeros, buscar));
             Console.WriteLine(Busqueda_secuencial_optimizada(VectorNumeros, buscar));
             Console.WriteLine(Busqueda_binaria(VectorNumeros, buscar));
-           // No se tiene que cumplir ninguna condicion
+            BinariaRecursiva(((izquierda + derecha) / 2),izquierda,derecha,buscar);
+            // No se tiene que cumplir ninguna condicion
             string Busqueda_secuencial(int[] numeros, int buscar)
             {
                 for (int i = 0; i < numeros.Length; i++)
                 {
                     if (numeros[i] == buscar)
-                    { 
+                    {
                         return "Esta en la posicion " + i;
                     }
                 }
@@ -45,7 +48,7 @@
                 }
                 return "No se encuentra su numero";
             }
-          //    Al igual que la busqueda secuencial optimizada, requiere que la lista este ordenada.
+            //    Al igual que la busqueda secuencial optimizada, requiere que la lista este ordenada.
             string Busqueda_binaria(int[] numeros, int NumeroBuscado)
             {
                 int IzquierdoInicio = numeros[0];
@@ -62,8 +65,8 @@
                     }
                     if (NumeroBuscado < numeros[PosicionCentral])
                     {
-                       // Si el numero es menor, el rango a encontrar pasa a ser el inicio de la lista (izquierda vale lo mismo)
-                       // y derecha vale el medio - 1 (ya que sabemos que el numero buscado no es el mismo que el del medio)
+                        // Si el numero es menor, el rango a encontrar pasa a ser el inicio de la lista (izquierda vale lo mismo)
+                        // y derecha vale el medio - 1 (ya que sabemos que el numero buscado no es el mismo que el del medio)
                         DerechoFinal = PosicionCentral - 1;
                     }
                     else if (NumeroBuscado > numeros[PosicionCentral])
@@ -75,18 +78,42 @@
                     }
                     else if (NumeroBuscado == numeros[PosicionCentral])
                     {
-                       // Si encuentra el numero, retorna la posicion junto a un texto (para que quede mejor)
+                        // Si encuentra el numero, retorna la posicion junto a un texto (para que quede mejor)
                         return "Su numero se encuentra en la posicion " + PosicionCentral;
                     }
 
 
                 }
-               // Si se rompio el while, entonces significa que no encontro el numero
+                // Si se rompio el while, entonces significa que no encontro el numero
                 return "Su numero no existe en la lista";
 
             }
+            void BinariaRecursiva(int central,int izquierda,int derecha,int numeroBuscar)
+            {
+                if (izquierda > derecha || numeroBuscar > derecha || numeroBuscar < izquierda)
+                {
+                    Console.WriteLine("No se encontro");
+                }
+                else if (numeroBuscar < VectorNumeros[central])
+                {
+                    derecha = central - 1;
+                    central = (izquierda + derecha) / 2;
+                    BinariaRecursiva(central, izquierda, derecha, buscar);
+                }
+                else if (numeroBuscar > VectorNumeros[central])
+                {
+                    izquierda = derecha + 1;
+                    central = (izquierda + derecha) / 2;
+                    BinariaRecursiva(central, izquierda, derecha, buscar);
+                }
+                else if(numeroBuscar == VectorNumeros[central])
+                {
+                    Console.WriteLine("La posicion del numero es: " + central);
+                }
+
 
             }
+
         }
     }
 }
