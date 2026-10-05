@@ -113,7 +113,67 @@
 
 
             }
+            void Burbuja_clasico(int[] NumerosDesordenados)
+            {
+                // FOR ANIDADO QUE SIRVE PARA ORDENAR LA LISTA
+                for (int j = 0; j < NumerosDesordenados.Length - 1; j++)
+                {
+                    for (int i = 0; i < NumerosDesordenados.Length - 1; i++)
+                    {
+                        if (NumerosDesordenados[i] > NumerosDesordenados[i + 1])
+                        {
+                            // CREO UN AUXILIAR YA QUE SI AL ASIGNARLE NUMEROSDESORDENADOS[I] A NUMEROSDESORDENADOS[I+1], TENDRIA 
+                            // EL MISMO VALOR YA QUE ANTES HICE NumerosDesordenados[i] = NumerosDesordenados[i + 1];
+                            int Aux = NumerosDesordenados[i];
+                            NumerosDesordenados[i] = NumerosDesordenados[i + 1];
+                            NumerosDesordenados[i + 1] = Aux;
+                        }
+                    }
+                }
+               // OTRO FOR QUE IMPRIME LA LISTA YA ORDENADA EN LA CONSOLA
+                for (int x = 0; x < NumerosDesordenados.Length; x++)
+                {
+                    Console.WriteLine(NumerosDesordenados[x]);
+                }
+            }
+            void Burbuja_optimizado(int[] NumerosDesordenados)
+            {
+                // FOR ANIDADO QUE SIRVE PARA ORDENAR LA LISTA
+                for (int j = 0; j < NumerosDesordenados.Length - 1; j++)
+                {
+                    // CREO UNA VARIABLE BOOLEANA LLAMADA ESTA DESORDENADA, LA CUAL EN CADA PASADA VA A VERIFICAR SI HUBO UN INTERCAMBIO
+                    // SI HUBO UN INTERCAMBIO PASA A TRUE, SI NO SE QUEDA EN FALSE. AL FINAL DEL FOR, VERIFICA SI ESTAORDENADA ES FALSE, EN ESE CASO
+                    // ROMPE EL FOR YA QUE SIGNIFICA QUE ESTA TODO ORDENADO
+                    bool EstaDesordenado = false;
+                    for (int i = 0; i < NumerosDesordenados.Length - 1; i++)
+                    {
+                        if (NumerosDesordenados[i] > NumerosDesordenados[i + 1])
+                        {
+                            // CREO UN AUXILIAR YA QUE SI AL ASIGNARLE NUMEROSDESORDENADOS[I] A NUMEROSDESORDENADOS[I+1], TENDRIA 
+                            // EL MISMO VALOR YA QUE ANTES HICE NumerosDesordenados[i] = NumerosDesordenados[i + 1];
+                            int Aux = NumerosDesordenados[i];
+                            NumerosDesordenados[i] = NumerosDesordenados[i + 1];
+                            NumerosDesordenados[i + 1] = Aux;
+                            EstaDesordenado = true;
+                        }
+                    }
+                    if (EstaDesordenado == false)
+                    {
+                        break;
+                    }
+                }
+                // OTRO FOR QUE IMPRIME LA LISTA YA ORDENADA EN LA CONSOLA
+                for (int x = 0; x < NumerosDesordenados.Length; x++)
+                {
+                    Console.WriteLine(NumerosDesordenados[x]);
+                }
 
+            }
+            void Seleccion(int[] NumerosDesordenados)
+            {
+                int Mitad = (NumerosDesordenados.Length - 1) / 2;
+
+            }
         }
     }
 }
