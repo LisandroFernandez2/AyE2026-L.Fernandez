@@ -12,6 +12,14 @@
                     31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
                     41, 42, 43, 44, 45, 46, 47, 48, 49, 50
             };
+            int[] VectorNumerosDesordenados = 
+            {
+                    42, 7, 89, 15, 63, 2, 55, 18, 91, 34,
+                    4, 76, 23, 68, 11, 80, 47, 3, 59, 12,
+                    95, 28, 71, 6, 50, 84, 19, 62, 37, 8,
+                    44, 99, 14, 73, 25, 52, 9, 87, 31, 66,
+                    1, 78, 20, 57, 82, 33, 16, 90, 49, 5
+            };
             int izquierda = VectorNumeros[0];
             int derecha = VectorNumeros[VectorNumeros.Length - 1];
             Console.WriteLine("Ingrese el numero que quiere buscar");
@@ -19,7 +27,14 @@
             Console.WriteLine(Busqueda_secuencial(VectorNumeros, buscar));
             Console.WriteLine(Busqueda_secuencial_optimizada(VectorNumeros, buscar));
             Console.WriteLine(Busqueda_binaria(VectorNumeros, buscar));
-            BinariaRecursiva(((izquierda + derecha) / 2),izquierda,derecha,buscar);
+            BinariaRecursiva(((izquierda + derecha) / 2), izquierda, derecha, buscar);
+           
+            Console.WriteLine("BURBUJA CLASICO:");
+            Burbuja_clasico(VectorNumerosDesordenados);
+            Console.WriteLine("BURBUJA OPTIMIZADO:");
+            Burbuja_optimizado(VectorNumerosDesordenados);
+            Console.WriteLine("SELECCION:");
+            Seleccion(VectorNumerosDesordenados);
             // No se tiene que cumplir ninguna condicion
             string Busqueda_secuencial(int[] numeros, int buscar)
             {
@@ -88,7 +103,8 @@
                 return "Su numero no existe en la lista";
 
             }
-            void BinariaRecursiva(int central,int izquierda,int derecha,int numeroBuscar)
+            // AL IGUAL QUE LAS OTRAS BUSQUEDAS, SE REQUIERE QUE ESTE ORDENADO
+            void BinariaRecursiva(int central, int izquierda, int derecha, int numeroBuscar)
             {
                 if (izquierda > derecha || numeroBuscar > derecha || numeroBuscar < izquierda)
                 {
@@ -106,13 +122,14 @@
                     central = (izquierda + derecha) / 2;
                     BinariaRecursiva(central, izquierda, derecha, buscar);
                 }
-                else if(numeroBuscar == VectorNumeros[central])
+                else if (numeroBuscar == VectorNumeros[central])
                 {
                     Console.WriteLine("La posicion del numero es: " + central);
                 }
 
 
             }
+            // OTRO FOR QUE IMPRIME LA LISTA YA ORDENADA EN LA CONSOLA
             void Burbuja_clasico(int[] NumerosDesordenados)
             {
                 // FOR ANIDADO QUE SIRVE PARA ORDENAR LA LISTA
@@ -130,12 +147,13 @@
                         }
                     }
                 }
-               // OTRO FOR QUE IMPRIME LA LISTA YA ORDENADA EN LA CONSOLA
+                // OTRO FOR QUE IMPRIME LA LISTA YA ORDENADA EN LA CONSOLA
                 for (int x = 0; x < NumerosDesordenados.Length; x++)
                 {
                     Console.WriteLine(NumerosDesordenados[x]);
                 }
             }
+            // NO SE TIENE QUE CUMPLIR NINGUNA CONDICION
             void Burbuja_optimizado(int[] NumerosDesordenados)
             {
                 // FOR ANIDADO QUE SIRVE PARA ORDENAR LA LISTA
@@ -169,10 +187,50 @@
                 }
 
             }
+           // NO SE TIENE QUE CUMPLIR NINGUNA CONDICION
             void Seleccion(int[] NumerosDesordenados)
             {
-                int Mitad = (NumerosDesordenados.Length - 1) / 2;
+                int Limite = 0;
+                int NumeroMenor = 0;
+                for (int y = 0; y < NumerosDesordenados.Length - 1; y++)
+                {
+                    for (int i = Limite; i < NumerosDesordenados.Length - 1; i++)
+                    {
+                        if (NumerosDesordenados[i] < NumerosDesordenados[i + 1])
+                        {
+                            NumeroMenor = NumerosDesordenados[i];
+                        }
+                    }
+                    Limite++;
+                }
+                for (int x = 0; x < NumerosDesordenados.Length - 1; x++)
+                {
+                    Console.WriteLine(NumerosDesordenados[x]);
+                }
+            }
+            void Insercion(int[] NumerosDesordenados)
+            {
+                for (int i = 1; i < NumerosDesordenados.Length - 1; i++)
+                {
+                    int Auxiliar = NumerosDesordenados[i]; // 7
+                    for (int j = i; j >= 0; j--) // primera vuelta: j vale 1
+                    {
+                        if (Auxiliar > NumerosDesordenados[j])// 7 es mayor que 7?
+                        {
+                            NumerosDesordenados[j + 1] = NumerosDesordenados[j];
+                        }
+                        else if (Auxiliar < NumerosDesordenados[j] || NumerosDesordenados[j] == NumerosDesordenados[0])// va aca
+                        {
+                            NumerosDesordenados[j] = Auxiliar;
+                            break;
+                        }
 
+                    }
+                }
+                for (int x = 0; x < NumerosDesordenados.Length - 1; x++)
+                {
+                    Console.WriteLine(NumerosDesordenados[x]);
+                }
             }
         }
     }
