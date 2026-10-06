@@ -212,20 +212,14 @@
             {
                 for (int i = 1; i < NumerosDesordenados.Length - 1; i++)
                 {
-                    int Auxiliar = NumerosDesordenados[i]; // 7
-                    for (int j = i; j >= 0; j--) // primera vuelta: j vale 1
+                    int Auxiliar = NumerosDesordenados[i]; 
+                    int j = i - 1;
+                    while (j >= 0 && NumerosDesordenados[j] > Auxiliar)
                     {
-                        if (Auxiliar > NumerosDesordenados[j])// 7 es mayor que 7?
-                        {
-                            NumerosDesordenados[j + 1] = NumerosDesordenados[j];
-                        }
-                        else if (Auxiliar < NumerosDesordenados[j] || NumerosDesordenados[j] == NumerosDesordenados[0])// va aca
-                        {
-                            NumerosDesordenados[j] = Auxiliar;
-                            break;
-                        }
-
+                        NumerosDesordenados[j + 1] = NumerosDesordenados[j];
+                        j = j - 1;
                     }
+                    NumerosDesordenados[j + 1] = Auxiliar;
                 }
                 for (int x = 0; x < NumerosDesordenados.Length - 1; x++)
                 {
