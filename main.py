@@ -68,3 +68,51 @@ def Ejercicio10():
             CantidadDeVocales += 1
     print("La cantidad de vocales es de: ", CantidadDeVocales)
 def Ejercicio11():
+    Numero = int(input("Por favor, ingrese un numero: "))
+    for x in range(12):
+        print (Numero * x)
+def Ejercicio12():
+    Numero = 0
+    while Numero < 100:
+        Numero += int(input("Por favor, ingrese un numero: "))
+def Ejercicio13():
+    palabra = input("Por favor, ingresa una palabra: ")
+    for letra in palabra:
+        print(letra)
+def Ejercicio14():
+    edad = int(input("Por favor, ingresa tu edad: "))
+    if edad >= 16 and edad >= 17:
+        print("Puede votar y manejar.")
+    elif edad >= 16:
+        print("Solo puede votar.")
+    elif edad >= 17:
+        print("Solo puede manejar.")
+    else:
+        print("No puede hacer ninguna de las dos cosas.")
+def Ejercicio15():
+    for x in range(50,0,-5):
+        print(x)
+def Ejercicio16():
+    ContraseñaSecreta = "AguanteBoca"
+    for x in range(2):
+        Adivinar = input("Por favor, ingrese la contraseña: ")
+        if Adivinar == ContraseñaSecreta:
+            print("Acceso permitido")
+            break;
+        else:
+            print("Acceso denegado")
+def Ejercicio17():
+    LargoDelNombre = 0
+    while LargoDelNombre < 10:
+        LargoDelNombre = 0
+        Nombre = input("Por favor, ingrese una nombre: ")
+        for x in Nombre:
+            LargoDelNombre += 1
+def Ejercicio18():
+    Frase = input("Por favor, ingrese una frase: ")
+    Frase = Frase.lower()
+    CantidadDeA = 0
+    for x in Frase:
+        if (x == "a"):
+            CantidadDeA += 1
+    print("La cantidad de A es de: ", CantidadDeA)
