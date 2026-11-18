@@ -5,14 +5,14 @@ void ejercicio1()
     int x = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Por favor, ingrese el segundo numero");
     int y = Convert.ToInt32(Console.ReadLine());
-    if (x < y)
+    if (x > y)
     {
-        Console.WriteLine("La relacion es falsa");
+        Console.WriteLine("La relacion es verdadera");
 
     }
     else
     {
-        Console.WriteLine("La relacion es verdadera");
+        Console.WriteLine("La relacion es falsa");
     }
 
 
@@ -351,7 +351,7 @@ void ejercicio20()
     int vv = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Por favor, ingrese el quinto numero");
     int ww = Convert.ToInt32(Console.ReadLine());
-    if ((ss * tt) + uu > 15 || vv / ww == 5)
+    if ((ss * tt) + uu > 15 && vv / ww == 5)
     {
         Console.WriteLine("Su logica es verdadera");
     }
