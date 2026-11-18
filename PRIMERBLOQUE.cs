@@ -71,7 +71,7 @@ switch (nuevoingresado)
 
 void ejercicioA()
 {
-    for (int x = 0; x <= 100; x += 3)
+    for (int x = 3; x <= 100; x += 3)
     {
         Console.WriteLine(x);
     }
@@ -166,16 +166,12 @@ void ejercicioE()
 void ejercicioF()
 {
     Console.WriteLine("Por favor, escriba su nombre");
-
     string nombre = Console.ReadLine();
     Console.WriteLine("Por favor, ingrese que cantidad de letras de su nombre desea mostrar en mayuscula");
     int numeroparte = (Convert.ToInt32(Console.ReadLine()));
-
-    string parte = nombre.Substring(0, numeroparte);
-    string partemayu = parte.ToUpper();
-    Console.WriteLine(partemayu);
-
-
+    string parteMayu = nombre.Substring(0, numeroparte).ToUpper();
+    string restoNombre = nombre.Substring(numeroparte).ToLower();
+    Console.WriteLine("¡Hola, " + parteMayu + restoNombre + "!");
 }
 
 void ejercicioG()
@@ -236,7 +232,7 @@ void ejercicioK()
 {
     Console.WriteLine("Por favor, ingrese un numero");
     int numeroing = (Convert.ToInt32(Console.ReadLine()));
-    for (int i = 0; i <= 12; i++)
+    for (int i = 1; i <= 12; i++)
     {
         Console.WriteLine("Las tables de su numero ingresado es");
         Console.WriteLine(i * numeroing);
@@ -277,13 +273,13 @@ void ejercicioN()
     {
         Console.WriteLine("Ustedes no puede ni votar ni manejar");
     }
-    else if (edad > 16)
-    {
-        Console.WriteLine("Usted puede manejar y votar");
-    }
-    else if (edad == 16)
+    else if (edad >= 16 && edad < 18)
     {
         Console.WriteLine("Usted solo puede votar");
+    }
+    else
+    {
+        Console.WriteLine("Usted puede manejar y votar");
     }
 }
 
@@ -297,15 +293,11 @@ void ejercicioO()
 
 void ejercicioP()
 {
-    
-    
-        Console.WriteLine("Ingrese una contraseña:");
-        string contraing1 = Console.ReadLine();
-
         bool coinciden = false;
-
         while (!coinciden)
         {
+            Console.WriteLine("Ingrese una contraseña:");
+            string contraing1 = Console.ReadLine();
             Console.WriteLine("Ingrese la contraseña nuevamente para verificar:");
             string contraing2 = Console.ReadLine();
 
@@ -319,7 +311,7 @@ void ejercicioP()
                 Console.WriteLine("Las contraseñas no coinciden. Intente de nuevo.");
             }
         }
-    }
+}
 
 void ejercicioQ()
 {
