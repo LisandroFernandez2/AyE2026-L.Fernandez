@@ -28,7 +28,7 @@ void ejercicio2()
     {
        
        
-            if (numero > 99 || numero < -99)
+            if ((numero < 10 || numero > 99) && (numero > -10 || numero < -99))
             {
                 Console.WriteLine("Ingrese un numero de dos cifras");
                 numero = Convert.ToInt32(Console.ReadLine());
